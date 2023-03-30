@@ -1,11 +1,15 @@
 <template>
-  <div class="flex">home</div>
+  <div class="relative flex justify-between">
+    <ArticleList></ArticleList>
+    <CommonInfoCard class="sticky top-20 right-10"> </CommonInfoCard>
+  </div>
 
-  <CommonInfoCard class="mx-auto mt-20"> </CommonInfoCard>
   <!-- <NuxtLink to="/about"> About </NuxtLink>
   <NuxtLink to="/article"> Article </NuxtLink> -->
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ArticleList from "~~/pages/article/index.vue";
+</script>
 
 <style scoped></style>
