@@ -1,5 +1,5 @@
 <template>
-  <figure class="bg-slate-50 p-4 w-[400px] h-[300px] rounded-lg shadow-md">
+  <figure class="bg-[#fff] p-4 w-[400px] h-[300px] rounded-lg shadow-around">
     <div class="flex">
       <MongoUiAvatar
         class="-mt-10"
@@ -19,7 +19,7 @@
 
     <!-- <div class="">Amoy</div> -->
     <div class="indent-3 my-3">A Little Rookie Now.</div>
-    <ul>
+    <!-- <ul>
       <li class="mb-1 flex items-center">
         <Icon name="skill-icons:github-dark" size="20"></Icon>
         <a class="underline ml-2" href="https://github.com/jjhroy">Github</a>
@@ -44,7 +44,7 @@
       </li>
       <li class="mb-1 flex items-center"></li>
       <li class="mb-1 flex items-center"></li>
-    </ul>
+    </ul> -->
     <div>
       power by --- <Icon name="vscode-icons:file-type-nuxt" size="20"></Icon>
       <a href="https://nuxt.com/" class="ml-1">Nuxt3</a>
