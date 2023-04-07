@@ -11,11 +11,14 @@
   "devDependencies": {
     "@nuxt/image-edge": "^1.0.0-28001428.0aa03b6",
     "@nuxtjs/tailwindcss": "^6.6.5",
+    "@pinia-plugin-persistedstate/nuxt": "^1.1.1",
+    "@pinia/nuxt": "^0.4.7",
     "dayjs": "^1.11.7",
     "nuxt": "^3.3.2",
     "nuxt-icon": "^0.3.3"
   },
   "dependencies": {
+    "ohmyfetch": "^0.4.21",
     "sass": "^1.60.0"
   }
 }

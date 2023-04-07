@@ -581,6 +581,30 @@
     unimport "^3.0.4"
     untyped "^1.2.2"
 
+"@nuxt/kit@^3.2.3":
+  version "3.3.3"
+  resolved "http://192.168.1.17:4873/@nuxt%2fkit/-/kit-3.3.3.tgz#14706db145101750ac4ab75f2cc6d5a5c507c51b"
+  integrity sha512-8ql3DweT1BNOCM6mmP8st+33NCAHHvmQuOS6Q75kXMZ6Ygqv06hxp5slpLXpT1ZOEoM+vzfkjO2lJ3rnjWYC4Q==
+  dependencies:
+    "@nuxt/schema" "3.3.3"
+    c12 "^1.2.0"
+    consola "^2.15.3"
+    defu "^6.1.2"
+    globby "^13.1.3"
+    hash-sum "^2.0.0"
+    ignore "^5.2.4"
+    jiti "^1.18.2"
+    knitwork "^1.0.0"
+    lodash.template "^4.5.0"
+    mlly "^1.2.0"
+    pathe "^1.1.0"
+    pkg-types "^1.0.2"
+    scule "^1.0.0"
+    semver "^7.3.8"
+    unctx "^2.1.2"
+    unimport "^3.0.4"
+    untyped "^1.3.2"
+
 "@nuxt/postcss8@^1.1.3":
   version "1.1.3"
   resolved "http://192.168.1.17:4873/@nuxt%2fpostcss8/-/postcss8-1.1.3.tgz#a7f8f6f2a664430bbdd3b175498eb693e0b1b351"
@@ -613,6 +637,25 @@
     ufo "^1.1.1"
     unimport "^3.0.4"
     untyped "^1.2.2"
+
+"@nuxt/schema@3.3.3":
+  version "3.3.3"
+  resolved "http://192.168.1.17:4873/@nuxt%2fschema/-/schema-3.3.3.tgz#8b7c6965120b3210f426946479181a1d2902293f"
+  integrity sha512-OxedDFqBJG8bfTEDOH5hVbQLXpFpSmBOM/oC6J4dTqM2GiWxYJysML5Lo7FPSMqFkTtgxVmd75bp+DRPE5XzWA==
+  dependencies:
+    c12 "^1.2.0"
+    create-require "^1.1.1"
+    defu "^6.1.2"
+    hookable "^5.5.3"
+    jiti "^1.18.2"
+    pathe "^1.1.0"
+    pkg-types "^1.0.2"
+    postcss-import-resolver "^2.0.0"
+    scule "^1.0.0"
+    std-env "^3.3.2"
+    ufo "^1.1.1"
+    unimport "^3.0.4"
+    untyped "^1.3.2"
 
 "@nuxt/telemetry@^2.1.10":
   version "2.1.10"
@@ -712,6 +755,23 @@
     tailwindcss "~3.3.0"
     ufo "^1.1.1"
     uncrypto "^0.1.2"
+
+"@pinia-plugin-persistedstate/nuxt@^1.1.1":
+  version "1.1.1"
+  resolved "http://192.168.1.17:4873/@pinia-plugin-persistedstate%2fnuxt/-/nuxt-1.1.1.tgz#53d1f26fa405aa20803da6d710c6777ab50445f2"
+  integrity sha512-b6ZNP3Re8COmfZEpj4KQmbp2TuDKrLggDFLZa8FiJF68xE/oCsPXIuXUvAt8E4ht/5sq4Z/grlA+iGXaI2aeKQ==
+  dependencies:
+    "@nuxt/kit" "^3.2.3"
+    defu "^6.1.2"
+    pinia-plugin-persistedstate ">=3.1.0"
+
+"@pinia/nuxt@^0.4.7":
+  version "0.4.7"
+  resolved "http://192.168.1.17:4873/@pinia%2fnuxt/-/nuxt-0.4.7.tgz#dc1bd597869043fc4ef8c14977454c7b909ba5d0"
+  integrity sha512-ifgA9PO/jmPlK1e/HtkrZa7OMSL8EUOpo8Z1O5vNLRr/OZ42kKGEaY1NbIoCz6dIf/pbkATTNHJmcrlPCo3zSA==
+  dependencies:
+    "@nuxt/kit" "^3.0.0"
+    pinia ">=2.0.31"
 
 "@rollup/plugin-alias@^4.0.3":
   version "4.0.3"
@@ -958,7 +1018,7 @@
     "@vue/compiler-dom" "3.2.47"
     "@vue/shared" "3.2.47"
 
-"@vue/devtools-api@^6.4.5":
+"@vue/devtools-api@^6.4.5", "@vue/devtools-api@^6.5.0":
   version "6.5.0"
   resolved "http://192.168.1.17:4873/@vue%2fdevtools-api/-/devtools-api-6.5.0.tgz#98b99425edee70b4c992692628fa1ea2c1e57d07"
   integrity sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==
@@ -1305,6 +1365,13 @@ builtin-modules@^3.3.0:
   version "3.3.0"
   resolved "http://192.168.1.17:4873/builtin-modules/-/builtin-modules-3.3.0.tgz#cae62812b89801e9656336e46223e030386be7b6"
   integrity sha512-zhaCDicdLuWN5UbN5IMnFqNMhNfo919sH85y2/ea+5Yg9TsTkeZxpL+JLbp6cgYFS4sRLp3YV4S6yDuqVWHYOw==
+
+busboy@^1.6.0:
+  version "1.6.0"
+  resolved "http://192.168.1.17:4873/busboy/-/busboy-1.6.0.tgz#966ea36a9502e43cdb9146962523b92f531f6893"
+  integrity sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==
+  dependencies:
+    streamsearch "^1.1.0"
 
 c12@^1.1.0, c12@^1.2.0:
   version "1.2.0"
@@ -1902,7 +1969,7 @@ depd@~1.1.2:
   resolved "http://192.168.1.17:4873/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha512-7emPTl6Dpo6JRXOXjLRxck+FlLRX5847cLKEn00PLAgc3g2hTZZgr+e4c2v6QpSmLeFP3n5yUo7ft6avBK/5jQ==
 
-destr@^1.2.1, destr@^1.2.2:
+destr@^1.2.0, destr@^1.2.1, destr@^1.2.2:
   version "1.2.2"
   resolved "http://192.168.1.17:4873/destr/-/destr-1.2.2.tgz#7ba9befcafb645a50e76b260449c63927b51e22f"
   integrity sha512-lrbCJwD9saUQrqUfXvl6qoM+QN3W7tLV5pAOs+OqOmopCCz/JkE05MHedJR1xfk4IAnZuJXPVuN5+7jNA2ZCiA==
@@ -2527,6 +2594,11 @@ hookable@^5.5.0, hookable@^5.5.1:
   version "5.5.2"
   resolved "http://192.168.1.17:4873/hookable/-/hookable-5.5.2.tgz#e70b8ee4f6c9aaad75b152c3d9150a7ad15e0f07"
   integrity sha512-9JZdvGuxXswyoT47M0xrg+IabnK76Ppc7qjf8JdFZu/IaCWflTHVf/ln/GzicraEnPONPIfxgk929rdYiOqv9w==
+
+hookable@^5.5.3:
+  version "5.5.3"
+  resolved "http://192.168.1.17:4873/hookable/-/hookable-5.5.3.tgz#6cfc358984a1ef991e2518cb9ed4a778bbd3215d"
+  integrity sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==
 
 html-tags@^3.1.0:
   version "3.2.0"
@@ -3453,6 +3525,11 @@ node-domexception@^1.0.0:
   resolved "http://192.168.1.17:4873/node-domexception/-/node-domexception-1.0.0.tgz#6888db46a1f71c0b76b3f7555016b63fe64766e5"
   integrity sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==
 
+node-fetch-native@^0.1.8:
+  version "0.1.8"
+  resolved "http://192.168.1.17:4873/node-fetch-native/-/node-fetch-native-0.1.8.tgz#19e2eaf6d86ac14e711ebd2612f40517c3468f2a"
+  integrity sha512-ZNaury9r0NxaT2oL65GvdGDy+5PlSaHTovT6JV5tOW07k1TQmgC0olZETa4C9KZg0+6zBr99ctTYa3Utqj9P/Q==
+
 node-fetch-native@^1.0.1, node-fetch-native@^1.0.2:
   version "1.0.2"
   resolved "http://192.168.1.17:4873/node-fetch-native/-/node-fetch-native-1.0.2.tgz#de3651399fda89a1a7c0bf6e7c4e9c239e8d0697"
@@ -3643,6 +3720,16 @@ ohash@^1.0.0:
   resolved "http://192.168.1.17:4873/ohash/-/ohash-1.0.0.tgz#e6ab04851ef9a479beb6e8a2457ff0d3ccf77371"
   integrity sha512-kxSyzq6tt+6EE/xCnD1XaFhCCjUNUaz3X30rJp6mnjGLXAAvuPFqohMdv0aScWzajR45C29HyBaXZ8jXBwnh9A==
 
+ohmyfetch@^0.4.21:
+  version "0.4.21"
+  resolved "http://192.168.1.17:4873/ohmyfetch/-/ohmyfetch-0.4.21.tgz#6850db751fc7bbf08153aa8b11ff1ef45fcfd963"
+  integrity sha512-VG7f/JRvqvBOYvL0tHyEIEG7XHWm7OqIfAs6/HqwWwDfjiJ1g0huIpe5sFEmyb+7hpFa1EGNH2aERWR72tlClw==
+  dependencies:
+    destr "^1.2.0"
+    node-fetch-native "^0.1.8"
+    ufo "^0.8.6"
+    undici "^5.12.0"
+
 on-finished@2.4.1, on-finished@^2.3.0:
   version "2.4.1"
   resolved "http://192.168.1.17:4873/on-finished/-/on-finished-2.4.1.tgz#58c8c44116e54845ad57f14ab10b03533184ac3f"
@@ -3818,6 +3905,19 @@ pify@^2.3.0:
   version "2.3.0"
   resolved "http://192.168.1.17:4873/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
   integrity sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==
+
+pinia-plugin-persistedstate@>=3.1.0:
+  version "3.1.0"
+  resolved "http://192.168.1.17:4873/pinia-plugin-persistedstate/-/pinia-plugin-persistedstate-3.1.0.tgz#eada2b61ecd478fce88e490a685210415cd7a1b4"
+  integrity sha512-8UN+vYMEPBdgNLwceY08mi5olI0wkYaEb8b6hD6xW7SnBRuPydWHlEhZvUWgNb/ibuf4PvufpvtS+dmhYjJQOw==
+
+pinia@>=2.0.31:
+  version "2.0.33"
+  resolved "http://192.168.1.17:4873/pinia/-/pinia-2.0.33.tgz#b70065be697874d5824e9792f59bd5d87ddb5e7d"
+  integrity sha512-HOj1yVV2itw6rNIrR2f7+MirGNxhORjrULL8GWgRwXsGSvEqIQ+SE0MYt6cwtpegzCda3i+rVTZM+AM7CG+kRg==
+  dependencies:
+    "@vue/devtools-api" "^6.5.0"
+    vue-demi "*"
 
 pirates@^4.0.1:
   version "4.0.5"
@@ -4668,6 +4768,11 @@ stdin-discarder@^0.1.0:
   dependencies:
     bl "^5.0.0"
 
+streamsearch@^1.1.0:
+  version "1.1.0"
+  resolved "http://192.168.1.17:4873/streamsearch/-/streamsearch-1.1.0.tgz#404dd1e2247ca94af554e841a8ef0eaa238da764"
+  integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
+
 "string-width@^1.0.2 || 2 || 3 || 4", string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
   version "4.2.3"
   resolved "http://192.168.1.17:4873/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
@@ -4988,6 +5093,11 @@ type-is@^1.6.16:
     media-typer "0.3.0"
     mime-types "~2.1.24"
 
+ufo@^0.8.6:
+  version "0.8.6"
+  resolved "http://192.168.1.17:4873/ufo/-/ufo-0.8.6.tgz#c0ec89bc0e0c9fa59a683680feb0f28b55ec323b"
+  integrity sha512-fk6CmUgwKCfX79EzcDQQpSCMxrHstvbLswFChHS0Vump+kFkw7nJBfTZoC1j0bOGoY9I7R3n2DGek5ajbcYnOw==
+
 ufo@^1.0.0, ufo@^1.1.0, ufo@^1.1.1:
   version "1.1.1"
   resolved "http://192.168.1.17:4873/ufo/-/ufo-1.1.1.tgz#e70265e7152f3aba425bd013d150b2cdf4056d7c"
@@ -5007,6 +5117,13 @@ unctx@^2.1.2:
     estree-walker "^3.0.3"
     magic-string "^0.27.0"
     unplugin "^1.0.1"
+
+undici@^5.12.0:
+  version "5.21.0"
+  resolved "http://192.168.1.17:4873/undici/-/undici-5.21.0.tgz#b00dfc381f202565ab7f52023222ab862bb2494f"
+  integrity sha512-HOjK8l6a57b2ZGXOcUsI5NLfoTrfmbOl90ixJDl0AEFG4wgHNDQxtZy15/ZQp7HhjkpaGlp/eneMgtsu1dIlUA==
+  dependencies:
+    busboy "^1.6.0"
 
 unenv@^1.2.2:
   version "1.2.2"
@@ -5077,7 +5194,7 @@ unstorage@^1.4.1:
     ofetch "^1.0.1"
     ufo "^1.1.1"
 
-untyped@^1.2.2:
+untyped@^1.2.2, untyped@^1.3.2:
   version "1.3.2"
   resolved "http://192.168.1.17:4873/untyped/-/untyped-1.3.2.tgz#0cff7ae9acf373dc404315b0e3c604af10648113"
   integrity sha512-z219Z65rOGD6jXIvIhpZFfwWdqQckB8sdZec2NO+TkcH1Bph7gL0hwLzRJs1KsOo4Jz4mF9guBXhsEnyEBGVfw==
@@ -5211,6 +5328,11 @@ vue-bundle-renderer@^1.0.2:
   integrity sha512-EfjX+5TTUl70bki9hPuVp+54JiZOvFIfoWBcfXsSwLzKEiDYyHNi5iX8srnqLIv3YRnvxgbntdcG1WPq0MvffQ==
   dependencies:
     ufo "^1.1.1"
+
+vue-demi@*:
+  version "0.13.11"
+  resolved "http://192.168.1.17:4873/vue-demi/-/vue-demi-0.13.11.tgz#7d90369bdae8974d87b1973564ad390182410d99"
+  integrity sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==
 
 vue-devtools-stub@^0.1.0:
   version "0.1.0"
