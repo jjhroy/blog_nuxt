@@ -45,13 +45,6 @@
       <li class="mb-1 flex items-center"></li>
       <li class="mb-1 flex items-center"></li>
     </ul> -->
-    <div>
-      power by --- <Icon name="vscode-icons:file-type-nuxt" size="20"></Icon>
-      <a href="https://nuxt.com/" class="ml-1">Nuxt3</a>
-      <span class="mx-1">and</span>
-      <Icon name="vscode-icons:file-type-tailwind" size="20"></Icon>
-      <a href="https://tailwindcss.com/" class="ml-1">Tailwind</a>
-    </div>
   </figure>
 </template>
 
