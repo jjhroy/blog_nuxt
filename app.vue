@@ -9,4 +9,8 @@
 <script setup lang="ts">
 import { useGlobalStore } from "~~/store/global";
 const { isLight } = useGlobalStore();
+
+useHead({
+  title: "Mongo Blog",
+});
 </script>
