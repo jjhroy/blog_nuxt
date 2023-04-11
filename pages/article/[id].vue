@@ -13,9 +13,6 @@
         a series of rabies cases springing up around the country.
       </p>
     </article> -->
-    <pre>
-      <ContentRenderer :value="'ac'" />
-    </pre>
   </div>
 </template>
 
