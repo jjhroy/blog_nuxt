@@ -1,7 +1,9 @@
 export default defineNuxtConfig({
     modules: [
         '@nuxtjs/tailwindcss',
-        'nuxt-icon', '@nuxt/image-edge',
+        '@nuxt/content',
+        'nuxt-icon',
+        '@nuxt/image-edge',
         '@pinia-plugin-persistedstate/nuxt',
         [
             '@pinia/nuxt',
@@ -14,5 +16,8 @@ export default defineNuxtConfig({
                 ],
             },
         ],
-    ]
+    ],
+    content: {
+        // https://content.nuxtjs.org/api/configuration
+    }
 })

@@ -1,6 +1,6 @@
 <template>
-  <div class="relative flex justify-between">
-    <ArticleList></ArticleList>
+  <div class="relative flex justify-between flex-grow">
+    <ArticleList class="ml-[25%]"></ArticleList>
     <CommonInfoCard class="sticky top-40 right-10 mt-20"> </CommonInfoCard>
   </div>
 
