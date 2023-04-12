@@ -10,12 +10,11 @@ export const fetchInstance = $fetch.create({
     credentials: 'include',
     // @ts-ignore
     onRequest: (content) => {
-        console.log('content', content);
-
     },
     // @ts-ignore
     onResponse({ response, options }) {
         const { _data } = response
+        response._data = _data.data
         console.log('response', _data.data);
     },
 })

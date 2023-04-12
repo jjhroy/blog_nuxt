@@ -1,28 +1,30 @@
 <template>
-  <div class="mx-auto mt-20">
-    <!-- <article class="prose lg:prose-xl">
-      <h1>Garlic bread with cheese: What the science tells us</h1>
-      <p>
-        For years parents have espoused the health benefits of eating garlic
-        bread with cheese to their children, with the food earning such an
-        iconic status in our culture that kids will often dress up as warm,
-        cheesy loaf for Halloween.
-      </p>
-      <p>
-        But a recent study shows that the celebrated appetizer may be linked to
-        a series of rabies cases springing up around the country.
-      </p>
-    </article> -->
+  <div class="mx-auto mt-20 flex gap-x-10">
+    <!-- <ClientOnly>
+      <ArticleCatalogCard
+        class="sticky top-5 min-w-[200px]"
+      ></ArticleCatalogCard>
+    </ClientOnly> -->
+    <div class="w-[800px]">
+      <MdEditor class="article-content" v-model="articleContent" preview-only />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import MdEditor from "md-editor-v3";
+import "md-editor-v3/lib/style.css";
+import { articleDetails } from "~/types/api/article";
+
 const route = useRoute();
-console.log("path", route.path.split("/content"));
-// const { data: articleDetail, refresh } = getApi("/articles/136");
-const { data } = await useAsyncData("/articles/136", () =>
-  queryContent("/hello").findOne()
+const { data: articleDetail } = getApi<articleDetails>(
+  `/articles/${route.params.id}`
 );
+const articleContent = ref("");
+// const articleDetail = ref<articleDetails>({})
+onMounted(() => {
+  articleContent.value = articleDetail.value?.articleContent ?? "";
+});
 </script>
 
 <style scoped></style>

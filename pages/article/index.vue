@@ -2,23 +2,55 @@
   <!--文章列表-->
   <div class="flex flex-col">
     <CommonArticleCard
-      v-for="(item, index) in articleList?.data"
+      v-for="item in articleList"
       :key="item.id"
       :article="item"
       ref="scrollComponent"
       class="mt-4"
     />
+    <div
+      v-if="!isLoading"
+      @click="loadMore"
+      class="my-10 cursor-pointer text-[#1a1a1a] text-[14px] text-opacity-60 font-semibold hover:text-opacity-90"
+    >
+      加载更多
+    </div>
+    <CommonLoadMore class="my-10" v-else></CommonLoadMore>
   </div>
 </template>
 
 <script setup lang="ts">
 import { articles } from "~~/types/api/article";
 
-const { data: articleList, refresh } = getApi<articles[]>("/articles", {
-  params: {
-    current: 1,
-    type: 1,
-  },
+const currentPage = ref(1);
+const articleList = ref<articles[]>([]);
+const isLoading = ref(false);
+const body = computed(() => ({
+  current: currentPage.value,
+}));
+
+const loadMore = async () => {
+  isLoading.value = true;
+  currentPage.value++;
+  // await refresh();
+  const { data: list } = await getArticleList(currentPage.value, 1);
+  setTimeout(() => {
+    articleList.value.push(...(list.value ?? []));
+    isLoading.value = false;
+  }, 500);
+};
+
+// const { data, refresh } = getApi<articles[]>("/articles", {
+//   params: {
+//     current: currentPage.value,
+//     type: 1,
+//   },
+// });
+
+const { data } = await getArticleList(currentPage.value, 1);
+
+onMounted(() => {
+  articleList.value = data.value ?? [];
 });
 </script>
 

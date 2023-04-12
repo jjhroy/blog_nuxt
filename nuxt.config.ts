@@ -1,7 +1,7 @@
+
 export default defineNuxtConfig({
     modules: [
         '@nuxtjs/tailwindcss',
-        '@nuxt/content',
         'nuxt-icon',
         '@nuxt/image-edge',
         '@pinia-plugin-persistedstate/nuxt',
@@ -19,5 +19,8 @@ export default defineNuxtConfig({
     ],
     content: {
         // https://content.nuxtjs.org/api/configuration
-    }
+    },
+    // plugins: [
+    //     '~plugins//mavon-editor.js'
+    // ],
 })
