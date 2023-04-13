@@ -18,7 +18,24 @@
     </div>
 
     <!-- <div class="">Amoy</div> -->
-    <div class="indent-3 my-3">A Little Rookie Now.</div>
+    <div class="indent-3 my-3">
+      <article class="prose lg:prose-xl">
+        <!-- <h3>Super Goal!!</h3> -->
+        <p class="text-[16px]">
+          Chinese
+          <Icon name="noto-v1:flag-for-flag-china" class="mr-2"></Icon>Live in
+          Amoy.
+        </p>
+        <p class="text-[16px]">Studying English and Japanese now</p>
+        <p class="text-[16px]">
+          This site is my first nuxt project,it might be a little bit simple,i
+          will make it special in the future.
+        </p>
+        <p class="text-center text-[14px] text-gray-500">
+          长风破浪会有时,直挂云帆济沧海
+        </p>
+      </article>
+    </div>
     <!-- <ul>
       <li class="mb-1 flex items-center">
         <Icon name="skill-icons:github-dark" size="20"></Icon>

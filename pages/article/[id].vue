@@ -1,10 +1,15 @@
 <template>
-  <div class="mx-auto mt-20 flex gap-x-10">
+  <div class="mx-auto mt-20 flex flex-col gap-x-10">
     <!-- <ClientOnly>
       <ArticleCatalogCard
         class="sticky top-5 min-w-[200px]"
       ></ArticleCatalogCard>
     </ClientOnly> -->
+    <div class="text-center">
+      <span class="font-semibold text-[26px]">{{
+        articleDetail?.articleTitle
+      }}</span>
+    </div>
     <div class="w-[800px]">
       <MdEditor class="article-content" v-model="articleContent" preview-only />
     </div>
@@ -24,6 +29,9 @@ const articleContent = ref("");
 // const articleDetail = ref<articleDetails>({})
 onMounted(() => {
   articleContent.value = articleDetail.value?.articleContent ?? "";
+  useHead({
+    title: articleDetail.value?.articleTitle,
+  });
 });
 </script>
 
