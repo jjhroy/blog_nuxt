@@ -1,27 +1,33 @@
 <template>
-  <div class="flex flex-col m-auto gap-x-6">
+  <div class="flex flex-col mx-auto gap-x-6">
     <div
-      class="flex flex-col flex-wrap gap-5"
+      class="flex flex-col flex-wrap"
       v-for="{ type, itemList } in navigationList"
     >
       <div
-        class="my-3 font-semibold text-[#333333] dark:text-[#fff] text-[24px] antialiased"
+        class="my-3 font-semibold text-[#333333] dark:text-[#fff] text-[20px] antialiased"
       >
         {{ type }}
       </div>
-      <div class="w-[1000px] flex flex-wrap gap-4">
+      <div
+        class="mobile:w-[640px] tablet:w-[860px] notebook:w-[1080px] w-[340px] flex flex-wrap gap-4"
+      >
         <a
           v-for="({ name, url, description, icon }, index) in itemList"
           :key="index"
-          class="h-[100px] w-[200px] bg-[#fff] dark:bg-[#1a1a1a] dark:text-[#fff] px-4 py-3 rounded-md card-shadow cursor-pointer"
+          class="mobile:h-[100px] mobile:w-[200px] w-[160px] h-[90px] bg-[#fff] dark:bg-[#1a1a1a] dark:text-[#fff] px-4 py-3 rounded-md card-shadow cursor-pointer"
           target="_blank"
           :href="url"
         >
           <div class="flex items-center mb-2">
-            <Icon :name="icon === '' ? 'mdi:web' : icon" size="24"></Icon>
-            <span class="text-[16px] ml-2 font-semibold">{{ name }}</span>
+            <Icon :name="icon === '' ? 'mdi:web' : icon" size="20"></Icon>
+            <span class="mobile:text-[16px] text-[14px] ml-2 font-semibold">{{
+              name
+            }}</span>
           </div>
-          <div class="text-[14px] leading-5 text-opacity-70">
+          <div
+            class="mobile:text-[14px] mobile:leading-5 text-[12px] leading-4 text-opacity-70 line-clamp-2"
+          >
             {{ description }}
           </div>
         </a>

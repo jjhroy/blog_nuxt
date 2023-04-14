@@ -23,12 +23,10 @@ export const globalStore = defineStore(GLOBAL_STORE, () => {
             websiteRecordNo: "",
         }
     })
-    const rename = () => {
-        console.log('rename');
-
-        userExtraData.value.username = 'roy'
+    const changeTheme = () => {
+        isLight.value = !isLight.value
     }
-    return { userExtraData, rename, websiteInfo, isLight }
+    return { userExtraData, changeTheme, websiteInfo, isLight }
 
 }, {
     persist: {

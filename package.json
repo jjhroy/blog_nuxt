@@ -19,6 +19,7 @@
     "nuxt-icon": "^0.3.3"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
     "@vueuse/nuxt": "^9.13.0",
     "md-editor-v3": "^2.11.0",
     "ohmyfetch": "^0.4.21",
