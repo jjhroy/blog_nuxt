@@ -1,31 +1,31 @@
 <template>
   <header
-    class="flex justify-between p-8 text-gray-500 dark:text-[#fff] dark:bg-black"
+    class="flex items-center justify-between p-8 text-gray-500 dark:text-[#fff] dark:bg-black"
   >
-    <div class="text-24px font-semibold">Roy Blog</div>
-    <nav class="flex">
-      <div class="flex gap-x-5 items-center font-sans">
+    <div class="mobile:text-[16px] text-[15px] font-semibold">Roy Blog</div>
+    <nav class="flex mobile:text-[16px] text-[15px]">
+      <div class="flex mobile:gap-x-5 gap-x-3 items-center font-sans">
         <NuxtLink
           to="/"
-          class="text-20px left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
+          class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
         >
           Blog
         </NuxtLink>
         <NuxtLink
           to="/about"
-          class="text-20px left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
+          class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
         >
-          About Me
+          About
         </NuxtLink>
         <!-- <NuxtLink
           to="/changelog"
-          class="text-20px left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
+          class=" left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
         >
           Changelog
         </NuxtLink> -->
         <NuxtLink
           to="/navigation"
-          class="text-20px left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
+          class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
         >
           Navigation
         </NuxtLink>
@@ -36,11 +36,11 @@
             class="hover:text-[#1a1a1a] dark:hover:text-gray-500"
           ></Icon>
         </a>
-        <span @click="isLight = !isLight">
+        <span @click="changeTheme">
           <Icon
             :name="isLight ? 'ph:sun-bold' : 'ph:moon-bold'"
             size="20"
-            class="cursor-pointer hover:text-[#1a1a1a] dark:hover:text-gray-500"
+            class="cursor-pointer hover:text-[#1a1a1a] dark:hover:text-gray-500 hover:animate-spin"
           ></Icon>
         </span>
       </div>
@@ -48,6 +48,7 @@
   </header>
 </template>
 <script setup lang="ts">
-import { useGlobalStore } from "~~/store/global";
+import { useGlobalStore, globalStore } from "~~/store/global";
 const { isLight } = useGlobalStore();
+const { changeTheme } = globalStore();
 </script>
