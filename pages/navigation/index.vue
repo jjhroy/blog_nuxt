@@ -4,14 +4,16 @@
       class="flex flex-col flex-wrap gap-5"
       v-for="{ type, itemList } in navigationList"
     >
-      <div class="my-3 font-semibold text-[#333333] text-[24px] antialiased">
+      <div
+        class="my-3 font-semibold text-[#333333] dark:text-[#fff] text-[24px] antialiased"
+      >
         {{ type }}
       </div>
       <div class="w-[1000px] flex flex-wrap gap-4">
         <a
           v-for="({ name, url, description, icon }, index) in itemList"
           :key="index"
-          class="h-[100px] w-[200px] bg-[#fff] px-4 py-3 rounded-md card-shadow cursor-pointer"
+          class="h-[100px] w-[200px] bg-[#fff] dark:bg-[#1a1a1a] dark:text-[#fff] px-4 py-3 rounded-md card-shadow cursor-pointer"
           target="_blank"
           :href="url"
         >
