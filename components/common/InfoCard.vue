@@ -1,5 +1,7 @@
 <template>
-  <figure class="bg-[#fff] p-4 w-[400px] h-[300px] rounded-lg shadow-around">
+  <figure
+    class="bg-[#fff] dark:bg-[#1a1a1a] p-4 w-[400px] h-[300px] rounded-lg shadow-around"
+  >
     <div class="flex">
       <MongoUiAvatar
         class="-mt-10"
@@ -19,7 +21,7 @@
 
     <!-- <div class="">Amoy</div> -->
     <div class="indent-3 my-3">
-      <article class="prose lg:prose-xl">
+      <article class="prose lg:prose-xl dark:text-[#fff]">
         <!-- <h3>Super Goal!!</h3> -->
         <p class="text-[16px]">
           Chinese

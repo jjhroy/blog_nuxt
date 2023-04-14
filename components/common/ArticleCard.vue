@@ -4,7 +4,7 @@
     <nuxt-link
       :to="`/article/${article.id}`"
       target="_blank"
-      class="font-semibold text-[#000000] opacity-60 text-xl hover:opacity-100 flex"
+      class="font-semibold text-[#000000] dark:text-[#fff] opacity-60 text-xl hover:opacity-100 flex"
     >
       <span>
         {{ article.articleTitle }}
