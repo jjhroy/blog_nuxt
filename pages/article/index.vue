@@ -9,7 +9,7 @@
       class="mt-4"
     />
     <div
-      v-if="!isLoading"
+      v-if="!isLoading && articleList.length !== 0"
       @click="loadMore"
       class="my-10 cursor-pointer text-[#1a1a1a] text-[14px] text-opacity-60 font-semibold hover:text-opacity-90"
     >
