@@ -6,7 +6,7 @@
       target="_blank"
       class="font-semibold text-[#000000] dark:text-[#fff] opacity-60 text-xl hover:opacity-100 flex"
     >
-      <span>
+      <span class="mobile:text-[20px] text-[16px] truncate">
         {{ article.articleTitle }}
       </span>
       <span class="text-[#888] text-[12px] leading-5 ml-1">

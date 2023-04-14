@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex items-center justify-between p-8 text-gray-500 dark:text-[#fff] dark:bg-black"
+    class="flex items-center justify-between mobile:p-8 p-6 text-gray-500 dark:text-[#fff] dark:bg-black"
   >
     <div class="mobile:text-[16px] text-[15px] font-semibold">Roy Blog</div>
     <nav class="flex mobile:text-[16px] text-[15px]">
