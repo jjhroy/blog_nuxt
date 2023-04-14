@@ -23,6 +23,12 @@
         >
           Changelog
         </NuxtLink> -->
+        <NuxtLink
+          to="/navigation"
+          class="text-20px left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
+        >
+          Navigation
+        </NuxtLink>
         <a target="_blank" href="https://github.com/jjhroy">
           <Icon
             name="mingcute:github-line"

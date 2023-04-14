@@ -1,16 +1,177 @@
 <template>
-  <a
-    class="m-auto h-[100px] w-[200px] bg-gray-100 px-4 py-3 rounded-md shadow-around cursor-pointer"
-    href="htttps://"
-  >
-    <div class="flex items-center mb-2">
-      <Icon name="mdi:web" size="24"></Icon>
-      <span class="text-[16px] ml-4 font-semibold">Google</span>
+  <div class="flex flex-col m-auto gap-x-6">
+    <div
+      class="flex flex-col flex-wrap gap-5"
+      v-for="{ type, itemList } in navigationList"
+    >
+      <div class="my-3 font-semibold text-[#333333] text-[24px] antialiased">
+        {{ type }}
+      </div>
+      <div class="w-[1000px] flex flex-wrap gap-4">
+        <a
+          v-for="({ name, url, description, icon }, index) in itemList"
+          :key="index"
+          class="h-[100px] w-[200px] bg-[#fff] px-4 py-3 rounded-md card-shadow cursor-pointer"
+          target="_blank"
+          :href="url"
+        >
+          <div class="flex items-center mb-2">
+            <Icon :name="icon === '' ? 'mdi:web' : icon" size="24"></Icon>
+            <span class="text-[16px] ml-2 font-semibold">{{ name }}</span>
+          </div>
+          <div class="text-[14px] leading-5 text-opacity-70">
+            {{ description }}
+          </div>
+        </a>
+      </div>
     </div>
-    <div class="text-[14px]">大家都在用的搜索引擎</div>
-  </a>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const navigationList = [
+  {
+    type: "搜索工具",
+    itemList: [
+      {
+        name: "Google",
+        url: "https://www.google.com",
+        description: "大家都在用的搜索引擎",
+        icon: "",
+      },
+      {
+        name: "Bing",
+        url: "https://www.bing.com",
+        description: "必应",
+        icon: "",
+      },
+      {
+        name: "Baidu",
+        url: "https://www.baidu.com",
+        description: "百度一下,你就知道",
+        icon: "",
+      },
+      {
+        name: "Yandex",
+        url: "https://yandex.com/",
+        description: "来自俄罗斯的搜索引擎,你懂的 😏",
+        icon: "",
+      },
+    ],
+  },
+  {
+    type: "学习文档",
+    itemList: [
+      {
+        name: "Nuxt3中文",
+        url: "https://nuxt.com.cn",
+        description: "Nuxt3文档的中文版",
+        icon: "",
+      },
+      {
+        name: "Nuxt3",
+        url: "https://nuxt.com",
+        description: "Nuxt3官方文档",
+        icon: "",
+      },
+      {
+        name: "Tailwind中文",
+        url: "https://www.tailwindcss.cn",
+        description: "Tailwind的中文文档,但是版本比较老了",
+        icon: "",
+      },
+      {
+        name: "Tailwind",
+        url: "https://tailwindcss.com",
+        description: "Tailwind英文官方文档",
+        icon: "",
+      },
+      {
+        name: "Sass中文网",
+        url: "https://www.sass.hk/docs/",
+        description: "Sass的中文教程",
+        icon: "",
+      },
+      {
+        name: "MDN中文",
+        url: "https://developer.mozilla.org/zh-CN/",
+        description: "超全的HTML、JS、CSS文档,强烈推荐",
+        icon: "",
+      },
+    ],
+  },
+  {
+    type: "UI框架",
+    itemList: [
+      {
+        name: "Element",
+        url: "https://element-plus.gitee.io/zh-CN/",
+        description: "Element官方文档",
+        icon: "",
+      },
+      {
+        name: "NaiveUI",
+        url: "https://www.naiveui.com/zh-CN",
+        description: "NaiveUI官方文档",
+        icon: "",
+      },
+      {
+        name: "AntDesignVue",
+        url: "https://antdv.com/docs/vue/introduce-cn",
+        description: "AntDesignVue官方文档",
+        icon: "",
+      },
+    ],
+  },
+  {
+    type: "图标库",
+    itemList: [
+      {
+        name: "NuxtIcon",
+        url: "https://www.naiveui.com/zh-CN",
+        description: "Nuxt项目首推的图标库,就是国内App的图标较少",
+        icon: "",
+      },
+      {
+        name: "Fontawesome",
+        url: "https://fontawesome.com",
+        description: "超多图标库支持",
+        icon: "",
+      },
+      {
+        name: "IconFont",
+        url: "https://www.iconfont.cn/",
+        description: "应该是国内最全的图标库了,就是使用相对繁琐",
+        icon: "",
+      },
+    ],
+  },
+  {
+    type: "工具库",
+    itemList: [
+      {
+        name: "Lodash",
+        url: "https://www.lodashjs.com/",
+        description: "非常实用的JS库,提升开发效率",
+        icon: "",
+      },
+      {
+        name: "VueUse",
+        url: "https://vueuse.org/",
+        description: "Vue官方团队提供的工具库",
+        icon: "",
+      },
+    ],
+  },
+];
+</script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.card-shadow {
+  box-shadow: 0px 2px 16px rgba(1, 28, 67, 0.08);
+  @apply transform transition-all ease-linear hover:translate-y-[-3px];
+  &:hover {
+    box-shadow: 0 0 7px 0 rgb(0 0 0 / 15%);
+  }
+}
+</style>
