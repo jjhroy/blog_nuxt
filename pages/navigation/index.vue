@@ -1,10 +1,26 @@
 <template>
   <div class="flex flex-col mx-auto gap-x-6">
+    <div class="flex items-center gap-x-4">
+      <Icon name="tabler:category" size="24"></Icon>
+      <div
+        v-for="({ type }, index) in navigationList"
+        :key="index"
+        class="flex rounded-md px-4 py-2 cursor-pointer text-[16px] leading-[21px]"
+        :class="{
+          'text-[#3B82F6] bg-[#F0F5FF]': index === currentType,
+          'text-[#7A7A7A] bg-[#F6F6F7]': index !== currentType,
+        }"
+        @click="selectCategory(index, type)"
+      >
+        <span class="m-auto">{{ type }}</span>
+      </div>
+    </div>
     <div
       class="flex flex-col flex-wrap"
       v-for="{ type, itemList } in navigationList"
     >
       <div
+        :id="type"
         class="my-3 font-semibold text-[#333333] dark:text-[#fff] text-[20px] antialiased"
       >
         {{ type }}
@@ -37,6 +53,7 @@
 </template>
 
 <script setup lang="ts">
+const currentType = ref(-1);
 const navigationList = [
   {
     type: "搜索工具",
@@ -172,6 +189,13 @@ const navigationList = [
     ],
   },
 ];
+const selectCategory = (index: number, type: string) => {
+  currentType.value = index;
+  document.querySelector(`#${type}`)?.scrollIntoView({
+    behavior: "smooth",
+    block: "center",
+  });
+};
 </script>
 
 <style scoped lang="scss">
