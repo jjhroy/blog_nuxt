@@ -4,6 +4,7 @@
       <NuxtLoadingIndicator />
       <NuxtPage />
     </NuxtLayout>
+    <MongoUiBacktop class="fixed bottom-20 right-20"></MongoUiBacktop>
   </div>
 </template>
 <script setup lang="ts">

@@ -85,7 +85,24 @@ const navigationList = [
     ],
   },
   {
-    type: "学习文档",
+    type: "个人推荐",
+    itemList: [
+      {
+        name: "空投",
+        url: "https://airportal.cn/",
+        description: "临时云盘,去打印店不再需要登录qq或微信",
+        icon: "",
+      },
+      {
+        name: "在线图片背景消除",
+        url: "https://www.remove.bg/zh",
+        description: "方便快速去除图片背景",
+        icon: "",
+      },
+    ],
+  },
+  {
+    type: "前端学习",
     itemList: [
       {
         name: "Nuxt3中文",
@@ -121,6 +138,12 @@ const navigationList = [
         name: "MDN中文",
         url: "https://developer.mozilla.org/zh-CN/",
         description: "超全的HTML、JS、CSS文档,强烈推荐",
+        icon: "",
+      },
+      {
+        name: "爱哔哩",
+        url: "https://www.ibilibili.com",
+        description: "哔哩哔哩视频解析和UI学习网站导航",
         icon: "",
       },
     ],
@@ -172,7 +195,7 @@ const navigationList = [
     ],
   },
   {
-    type: "工具库",
+    type: "前端工具库",
     itemList: [
       {
         name: "Lodash",
@@ -184,6 +207,47 @@ const navigationList = [
         name: "VueUse",
         url: "https://vueuse.org/",
         description: "Vue官方团队提供的工具库",
+        icon: "",
+      },
+    ],
+  },
+  {
+    type: "ACG相关",
+    itemList: [
+      {
+        name: "哔哩哔哩",
+        url: "https://www.bilibili.com/",
+        description: "蜀黍我啊",
+        icon: "",
+      },
+      {
+        name: "趣动漫",
+        url: "https://qdmsh.com/",
+        description: "无广告的在线动漫网,资源算比较齐,缺点速度慢一点",
+        icon: "",
+      },
+      {
+        name: "樱花动漫",
+        url: "https://www.yhpdm.net/",
+        description: "知名粉色二次元动漫网",
+        icon: "",
+      },
+      {
+        name: "漫画大全",
+        url: "https://www.mangabz.com/manga-list/",
+        description: "无广告的在线漫画网,更新速度稍慢",
+        icon: "",
+      },
+      {
+        name: "Switch520",
+        url: "https://xxxxx525.com/",
+        description: "低调,超全学习版软件(bushi",
+        icon: "",
+      },
+      {
+        name: "NavAcg",
+        url: "https://www.navacg.net/",
+        description: "品类超全的ACG导航站",
         icon: "",
       },
     ],
