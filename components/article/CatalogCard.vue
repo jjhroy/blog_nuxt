@@ -1,12 +1,12 @@
 <template>
-  <MongoUiCard>
-    <template #head>
+  <div>
+    <div class="flex items-center">
       <span>目录</span>
       <span class="text-[#a9a9a9] text-[18px] ml-auto">{{
         state.progress
       }}</span>
-    </template>
-    <template #body>
+    </div>
+    <div>
       <div class="catalog-content">
         <div
           v-for="title in state.titles"
@@ -23,8 +23,8 @@
           {{ title.name }}
         </div>
       </div>
-    </template>
-  </MongoUiCard>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -153,7 +153,11 @@ const setChildrenVisible = (title, isVisible) => {
 
 // 滚动到指定的位置
 const scrollToView = (scrollTop) => {
-  window.scrollTo({ top: scrollTop, behavior: "smooth" });
+  window.scrollTo({
+    top: scrollTop + 220,
+    behavior: "smooth",
+    block: "center",
+  });
 };
 onMounted(() => {
   setTimeout(() => {
@@ -173,22 +177,19 @@ onMounted(() => {
 }
 
 .catalog-item {
-  color: var(--theme-color);
+  color: #1a1a1a;
   margin: 5px 0;
   line-height: 28px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   font-size: 14px;
+  border-radius: 6px;
   padding: 2px 6px;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-
-  &:hover {
-    color: var(--theme-color);
-  }
 }
 
 .active {
