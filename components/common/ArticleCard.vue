@@ -14,7 +14,7 @@
       </span>
     </nuxt-link>
     <span class="flex items-center text-[#888] text-[12px] leading-5">
-      {{ formatDate(article.createTime) }}
+      {{ formatDateDefault(article.createTime) }}
     </span>
   </div>
 </template>

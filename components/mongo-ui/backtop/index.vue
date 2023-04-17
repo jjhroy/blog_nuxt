@@ -1,12 +1,14 @@
 <template>
-  <blog-button type="circle" @click="backTop" v-show="btnFlag">
-    <Icon name="ri:arrow-up-s-fill" size="16"></Icon>
-  </blog-button>
+  <div
+    class="shadow-around bg-[#fff] w-10 h-10 rounded-full flex cursor-pointer"
+    @click="backTop"
+    v-show="btnFlag"
+  >
+    <Icon name="ri:arrow-up-s-fill" size="20" class="m-auto"></Icon>
+  </div>
 </template>
 
 <script setup lang="ts">
-import BlogButton from "../button/index.vue";
-
 const scrollTop = ref(0);
 const btnFlag = ref(false);
 const backTop = () => {
@@ -33,7 +35,9 @@ const scrollToTop = () => {
   }
 };
 
-window.addEventListener("scroll", scrollToTop);
+onMounted(() => {
+  window.addEventListener("scroll", scrollToTop);
+});
 </script>
 
 <style scoped lang="scss"></style>

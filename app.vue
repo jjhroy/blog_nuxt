@@ -3,12 +3,13 @@
     <NuxtLayout>
       <NuxtLoadingIndicator />
       <NuxtPage />
+      <MongoUiBacktop class="fixed bottom-20 right-20" />
     </NuxtLayout>
-    <MongoUiBacktop class="fixed bottom-20 right-20"></MongoUiBacktop>
   </div>
 </template>
 <script setup lang="ts">
 import { useGlobalStore } from "~~/store/global";
+
 const { isLight } = useGlobalStore();
 
 useHead({
