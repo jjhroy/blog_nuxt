@@ -1,11 +1,12 @@
 <template>
   <div>
     <div class="flex items-center">
-      <span>目录</span>
+      <span :class="isLight ? 'text-[#1a1a1a]' : 'text-[#fff]'">目录</span>
       <span class="text-[#a9a9a9] text-[18px] ml-auto">{{
         state.progress
       }}</span>
     </div>
+    <div class="border-t-1 border-t-[#a9a9a9] w-[200px]"></div>
     <div>
       <div class="catalog-content">
         <div
@@ -15,6 +16,9 @@
           :class="[
             'catalog-item',
             state.currentTitle.id == title.id ? 'active' : 'not-active',
+            isLight
+              ? 'text-[#1a1a1a]'
+              : 'text-[#fff] hover:bg-gray-400 hover:bg-opacity-60 hover:text-[#1a1a1a]',
           ]"
           :style="{ marginLeft: title.level * 20 + 'px' }"
           v-show="title.isVisible"
@@ -28,6 +32,9 @@
 </template>
 
 <script setup>
+import { useGlobalStore } from "~~/store/global";
+
+const { isLight } = useGlobalStore();
 const state = reactive({
   titles: [],
   currentTitle: [],
@@ -177,14 +184,14 @@ onMounted(() => {
 }
 
 .catalog-item {
-  color: #1a1a1a;
+  // color: #1a1a1a;
   margin: 5px 0;
   line-height: 28px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   font-size: 14px;
   border-radius: 6px;
-  padding: 2px 6px;
+  padding: 4px 8px;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -195,10 +202,10 @@ onMounted(() => {
 .active {
   background-color: #0c82e9;
   color: white;
-
+}
+.not-active {
   &:hover {
-    background-color: #0c82e9;
-    color: white;
+    background-color: #f6f6f7;
   }
 }
 </style>

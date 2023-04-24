@@ -21,6 +21,7 @@
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
     "@vueuse/nuxt": "^9.13.0",
+    "easy-typer-js": "^2.1.0",
     "md-editor-v3": "^2.11.0",
     "ohmyfetch": "^0.4.21",
     "sass": "^1.60.0"

@@ -99,6 +99,12 @@ const navigationList = [
         description: "方便快速去除图片背景",
         icon: "",
       },
+      {
+        name: "WallHaven",
+        url: "https://wallhaven.cc/",
+        description: "高质量壁纸网站",
+        icon: "",
+      },
     ],
   },
   {
