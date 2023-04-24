@@ -10,6 +10,7 @@
         <MdEditor
           class="article-content"
           v-model="articleContent"
+          :theme="isLight ? 'light' : 'dark'"
           preview-only
         />
       </div>
@@ -28,6 +29,9 @@
 import MdEditor from "md-editor-v3";
 import "md-editor-v3/lib/style.css";
 import { articleDetails } from "~/types/api/article";
+import { useGlobalStore } from "~~/store/global";
+
+const { isLight } = useGlobalStore();
 
 const route = useRoute();
 const { data: articleDetail } = getApi<articleDetails>(
