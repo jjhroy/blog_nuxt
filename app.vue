@@ -14,5 +14,11 @@ const { isLight } = useGlobalStore();
 
 useHead({
   title: "Mongo Blog",
+  meta: [
+    {
+      "http-equiv": "Content-Security-Policy",
+      content: "upgrade-insecure-requests",
+    },
+  ],
 });
 </script>
