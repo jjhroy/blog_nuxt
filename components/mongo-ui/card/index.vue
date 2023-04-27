@@ -11,5 +11,5 @@
 <script setup lang="ts">
 const props = defineProps({
   title: String,
-})
+});
 </script>

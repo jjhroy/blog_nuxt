@@ -15,3 +15,7 @@ export const formatDateFullTime = (date: Date) => {
 export const getDayDiff = (date: Date) => {
     return dayjs(new Date()).diff(date, 'days')
 }
+
+export const useFoo = () => {
+    return useState('foo', () => 'bar')
+}

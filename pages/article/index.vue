@@ -6,13 +6,11 @@
       :key="item.id"
       :article="item"
       ref="scrollComponent"
-      class="mt-4"
-    />
+      class="mt-4" />
     <div
       v-if="!isLoading && articleList.length !== 0"
       @click="loadMore"
-      class="my-10 cursor-pointer text-[#1a1a1a] text-[14px] text-opacity-60 font-semibold hover:text-opacity-90"
-    >
+      class="my-10 cursor-pointer text-[#1a1a1a] text-[14px] text-opacity-60 font-semibold hover:text-opacity-90">
       加载更多
     </div>
     <CommonLoadMore class="my-10" v-else></CommonLoadMore>
@@ -20,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { articles } from "~~/types/api/article";
+import { articles } from '~~/types/api/article';
 
 const currentPage = ref(1);
 const articleList = ref<articles[]>([]);

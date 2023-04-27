@@ -1,5 +1,5 @@
 // import { $fetch } from 'ohmyfetch'
-const baseURL = 'https://114.132.230.67:8080'
+const baseURL = 'http://114.132.230.67:8080'
 
 export const fetchInstance = $fetch.create({
     baseURL,

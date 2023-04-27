@@ -4,8 +4,7 @@
     <nuxt-link
       :to="`/article/${article.id}`"
       target="_blank"
-      class="font-semibold text-[#000000] dark:text-[#fff] opacity-60 text-xl hover:opacity-100 flex"
-    >
+      class="font-semibold text-[#000000] dark:text-[#fff] opacity-60 text-xl hover:opacity-100 flex">
       <span class="mobile:text-[20px] text-[16px] truncate">
         {{ article.articleTitle }}
       </span>
@@ -14,15 +13,16 @@
       </span>
     </nuxt-link>
     <span class="flex items-center text-[#888] text-[12px] leading-5">
-      {{ formatDateDefault(article.createTime) }}
+      {{ calcRelativeTime(article.createTime) }}
     </span>
   </div>
 </template>
 
 <script setup lang="ts">
-import { articles } from "~~/types/api/article";
+import { calcRelativeTime } from '~~/composables/index';
+import { articles } from '~~/types/api/article';
 
-const props = defineProps<{
+defineProps<{
   article: articles;
 }>();
 </script>
