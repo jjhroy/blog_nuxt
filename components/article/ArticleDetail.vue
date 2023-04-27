@@ -27,7 +27,6 @@ const { getArticleById } = articleStore();
 const { articleDetail } = useArticleStore();
 try {
   getArticleById(Number(route.params.id));
-  console.log(articleDetail.value, 'article');
 } catch (error) {
   redirectTo404Page();
 }

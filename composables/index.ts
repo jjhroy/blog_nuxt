@@ -9,8 +9,6 @@ export const calcRelativeTime = (
         } else return num
     }
     let _date = dayjs(date).unix().valueOf() * 1000
-    console.log('now', _date);
-
     const now = Date.now()
     const prefix = _date > now ? '后' : '前'
     // 转为秒

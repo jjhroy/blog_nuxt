@@ -48,7 +48,6 @@ const getTitles = () => {
     return titles;
   }
   let elements = Array.from(articleElement.querySelectorAll('*'));
-  console.log('ele', elements);
   // 调整标签等级
   let tagNames = new Set(elements.map((el) => el.tagName.toLowerCase()));
   for (let i = levels.length - 1; i >= 0; i--) {
@@ -109,7 +108,6 @@ const getTitles = () => {
     //state.titles.push(node)
     titles.push(node);
   }
-  console.log(state.titles);
   return titles;
 };
 
