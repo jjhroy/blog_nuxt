@@ -4,7 +4,7 @@ import { FetchOptions } from 'ohmyfetch'
 import type { Ref } from 'vue'
 import { fetchInstance } from '~~/utils/http'
 
-
+const baseURL = 'https://www.linkstarted.top/api'
 export const postApi = <T>(
     url: string,
     options: FetchOptions & {
@@ -23,7 +23,7 @@ export const postApi = <T>(
                 //   process.env.NODE_ENV === 'development'
                 //     ? 'http://pre_amz123.zfty.work/paw'
                 //     : VITE_BACKEND_API,
-                baseURL: 'http://114.132.230.67:8080',
+                baseURL,
                 ...options,
                 // @ts-ignore
                 body: isRef(options?.body) ? options.body.value : options.body,
@@ -49,7 +49,7 @@ export const getApi = <T>(
                 //   process.env.NODE_ENV === 'development'
                 //     ? 'http://pre_amz123.zfty.work/paw'
                 //     : VITE_BACKEND_API,
-                baseURL: 'http://114.132.230.67:8080',
+                baseURL,
                 ...options,
                 // @ts-ignore
                 body: isRef(options?.body) ? options.body.value : options.body,
