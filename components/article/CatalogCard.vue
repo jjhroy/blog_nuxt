@@ -22,8 +22,7 @@
           ]"
           :style="{ marginLeft: title.level * 20 + 'px' }"
           v-show="title.isVisible"
-          :title="title.rawName"
-        >
+          :title="title.rawName">
           {{ title.name }}
         </div>
       </div>
@@ -32,7 +31,7 @@
 </template>
 
 <script setup>
-import { useGlobalStore } from "~~/store/global";
+import { useGlobalStore } from '~~/store/global';
 
 const { isLight } = useGlobalStore();
 const state = reactive({
@@ -43,13 +42,13 @@ const state = reactive({
 // 获取目录的标题
 const getTitles = () => {
   let titles = [];
-  let levels = ["h1", "h2", "h3"];
-  let articleElement = document.querySelector(".article-content");
+  let levels = ['h1', 'h2', 'h3'];
+  let articleElement = document.querySelector('.article-content');
   if (!articleElement) {
     return titles;
   }
-  let elements = Array.from(articleElement.querySelectorAll("*"));
-  console.log("ele", elements);
+  let elements = Array.from(articleElement.querySelectorAll('*'));
+  console.log('ele', elements);
   // 调整标签等级
   let tagNames = new Set(elements.map((el) => el.tagName.toLowerCase()));
   for (let i = levels.length - 1; i >= 0; i--) {
@@ -64,7 +63,7 @@ const getTitles = () => {
     let level = levels.indexOf(tagName);
     if (level == -1) continue;
 
-    let id = tagName + "-" + element.innerText + "-" + i;
+    let id = tagName + '-' + element.innerText + '-' + i;
     let node = {
       id,
       level,
@@ -103,10 +102,10 @@ const getTitles = () => {
     }
 
     serialNumbers[level] += 1;
-    let serialNumber = serialNumbers.slice(0, level + 1).join(".");
+    let serialNumber = serialNumbers.slice(0, level + 1).join('.');
 
     node.isVisible = node.parent == null;
-    node.name = serialNumber + ". " + element.innerText;
+    node.name = serialNumber + '. ' + element.innerText;
     //state.titles.push(node)
     titles.push(node);
   }
@@ -115,10 +114,10 @@ const getTitles = () => {
 };
 
 // 监听滚动事件并更新样式
-window.addEventListener("scroll", function () {
+window.addEventListener('scroll', function () {
   state.progress =
     parseInt((window.scrollY / document.documentElement.scrollHeight) * 100) +
-    "%";
+    '%';
 
   let visibleTitles = [];
   for (let i = state.titles.length - 1; i >= 0; i--) {
@@ -162,8 +161,8 @@ const setChildrenVisible = (title, isVisible) => {
 const scrollToView = (scrollTop) => {
   window.scrollTo({
     top: scrollTop + 220,
-    behavior: "smooth",
-    block: "center",
+    behavior: 'smooth',
+    block: 'center',
   });
 };
 onMounted(() => {

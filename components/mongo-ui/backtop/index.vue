@@ -2,8 +2,7 @@
   <div
     class="shadow-around bg-[#fff] w-10 h-10 rounded-full flex cursor-pointer"
     @click="backTop"
-    v-show="btnFlag"
-  >
+    v-show="btnFlag">
     <Icon name="ri:arrow-up-s-fill" size="20" class="m-auto"></Icon>
   </div>
 </template>
@@ -36,7 +35,7 @@ const scrollToTop = () => {
 };
 
 onMounted(() => {
-  window.addEventListener("scroll", scrollToTop);
+  window.addEventListener('scroll', scrollToTop);
 });
 </script>
 
