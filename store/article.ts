@@ -1,22 +1,43 @@
 import { ARTICLE_STORE } from '~/configs/store'
 import { storeToRefs } from 'pinia'
-import { articleDetails } from '~/types/api/article'
+import { articleDetails, articles } from '~/types/api/article'
 
 export const articleStore = defineStore(ARTICLE_STORE, () => {
 
     const articleDetail = ref<articleDetails>()
+    const articleList = ref<articles[]>([])
+    const currentPage = ref(1)
+    const isEnd = ref(false)
+    /**
+     * 获取文章列表
+     * @param oldList 
+     */
+    const getArticleList = async (oldList: articles[]) => {
+        const { data } = await getApi<articles[]>("/articles", {
+            params: {
+                current: currentPage.value,
+                type: 1,
+            }
+        })
+        if (data.value?.length === 0) isEnd.value = true
+        articleList.value = [...oldList, ...(data.value ?? [])];
+    }
     /**
      * 根据ID获取文章详情
      * @param id 
      */
-    const getArticleById = (id: number) => {
-        const data = getApi<articleDetails>(
+    const getArticleById = async (id: number) => {
+        const { data } = await getApi<articleDetails>(
             `/articles/${id}`
         );
-        articleDetail.value = data.data.value!
+        articleDetail.value = data.value!
     }
 
     return {
+        isEnd,
+        currentPage,
+        articleList,
+        getArticleList,
         getArticleById,
         articleDetail
     }
