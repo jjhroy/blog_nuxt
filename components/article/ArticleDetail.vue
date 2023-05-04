@@ -20,13 +20,14 @@
 <script setup lang="ts">
 import Sidebar from './Sidebar.vue';
 import Content from './Content.vue';
+import 'md-editor-v3/lib/style.css';
 import { useArticleStore, articleStore } from '~~/store/article';
 
 const route = useRoute();
 const { getArticleById } = articleStore();
 const { articleDetail } = useArticleStore();
 try {
-  getArticleById(Number(route.params.id));
+  await Promise.allSettled([getArticleById(Number(route.params.id))]);
 } catch (error) {
   redirectTo404Page();
 }

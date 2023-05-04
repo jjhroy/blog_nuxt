@@ -1,5 +1,6 @@
 import { ARTICLE_STORE } from '~/configs/store'
 import { storeToRefs } from 'pinia'
+import dayjs from 'dayjs'
 import { articleDetails, articles } from '~/types/api/article'
 
 export const articleStore = defineStore(ARTICLE_STORE, () => {
@@ -21,6 +22,8 @@ export const articleStore = defineStore(ARTICLE_STORE, () => {
         })
         if (data.value?.length === 0) isEnd.value = true
         articleList.value = [...oldList, ...(data.value ?? [])];
+        console.log(data.value, 'list');
+
     }
     /**
      * 根据ID获取文章详情
@@ -28,8 +31,12 @@ export const articleStore = defineStore(ARTICLE_STORE, () => {
      */
     const getArticleById = async (id: number) => {
         const { data } = await getApi<articleDetails>(
-            `/articles/${id}`
+            `/articles/${id}`, {
+            key: id + dayjs(new Date()).unix().valueOf().toString()
+        }
         );
+        console.log('new article', data.value);
+
         articleDetail.value = data.value!
     }
 

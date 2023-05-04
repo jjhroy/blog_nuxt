@@ -38,9 +38,10 @@ export const getApi = <T>(
         body?: Ref<Record<string, any>> | Record<string, any>
         asyncFetchOption?: AsyncDataOptions
     } = {}
-) =>
-    useAsyncData(
-        options?.key ?? url,
+) => {
+    const key = options?.key ?? url
+    return useAsyncData(
+        key,
         () =>
             fetchInstance<T>(url, {
                 method: 'GET',
@@ -56,3 +57,4 @@ export const getApi = <T>(
             }),
         options?.asyncFetchOption
     )
+}
