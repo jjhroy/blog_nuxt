@@ -11,19 +11,15 @@ export const postApi = <T>(
         key?: string
         body?: Ref<Record<string, any>> | Record<string, any>
         asyncFetchOption?: AsyncDataOptions
-    } = {}
+        outer?: boolean
+    } = {},
 ) =>
     useAsyncData(
         options?.key ?? url,
         () =>
             fetchInstance<T>(url, {
                 method: 'POST',
-                // baseURL: process.client ? baseURL : VITE_BACKEND_API,
-                // baseURL:
-                //   process.env.NODE_ENV === 'development'
-                //     ? 'http://pre_amz123.zfty.work/paw'
-                //     : VITE_BACKEND_API,
-                baseURL,
+                baseURL: options.outer ? options.baseURL : baseURL,
                 ...options,
                 // @ts-ignore
                 body: isRef(options?.body) ? options.body.value : options.body,
@@ -37,6 +33,7 @@ export const getApi = <T>(
         key?: string
         body?: Ref<Record<string, any>> | Record<string, any>
         asyncFetchOption?: AsyncDataOptions
+        outer?: boolean
     } = {}
 ) => {
     const key = options?.key ?? url
@@ -45,12 +42,7 @@ export const getApi = <T>(
         () =>
             fetchInstance<T>(url, {
                 method: 'GET',
-                // baseURL: process.client ? baseURL : VITE_BACKEND_API,
-                // baseURL:
-                //   process.env.NODE_ENV === 'development'
-                //     ? 'http://pre_amz123.zfty.work/paw'
-                //     : VITE_BACKEND_API,
-                baseURL,
+                baseURL: options.outer ? options.baseURL : baseURL,
                 ...options,
                 // @ts-ignore
                 body: isRef(options?.body) ? options.body.value : options.body,
@@ -58,3 +50,6 @@ export const getApi = <T>(
         options?.asyncFetchOption
     )
 }
+
+
+

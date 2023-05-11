@@ -35,8 +35,6 @@ export const articleStore = defineStore(ARTICLE_STORE, () => {
             key: id + dayjs(new Date()).unix().valueOf().toString()
         }
         );
-        console.log('new article', data.value);
-
         articleDetail.value = data.value!
     }
 

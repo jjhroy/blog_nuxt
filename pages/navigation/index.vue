@@ -1,7 +1,9 @@
 <template>
   <div class="flex flex-col mx-auto gap-x-6">
     <div class="flex items-center gap-x-4">
-      <Icon name="tabler:category" size="24"></Icon>
+      <Icon
+        name="tabler:category"
+        size="24"></Icon>
       <div
         v-for="({ type }, index) in navigationList"
         :key="index"
@@ -22,8 +24,7 @@
         class="my-3 font-semibold text-[#333333] dark:text-[#fff] text-[20px] antialiased">
         {{ type }}
       </div>
-      <div
-        class="mobile:w-[640px] tablet:w-[860px] notebook:w-[1080px] w-[340px] flex flex-wrap gap-4">
+      <div class="mobile:w-[640px] tablet:w-[860px] notebook:w-[1080px] w-[340px] flex flex-wrap gap-4">
         <a
           v-for="({ name, url, description, icon, color }, index) in itemList"
           :key="index"
@@ -35,9 +36,7 @@
               :name="icon === '' ? 'mdi:web' : icon"
               size="20"
               :style="{ color: color }"></Icon>
-            <span class="mobile:text-[16px] text-[14px] ml-2 font-semibold">{{
-              name
-            }}</span>
+            <span class="mobile:text-[16px] text-[14px] ml-2 font-semibold truncate">{{ name }}</span>
           </div>
           <div
             class="mobile:text-[13px] mobile:leading-5 text-[12px] leading-4 text-gray-600 text-opacity-90 line-clamp-2">
@@ -88,7 +87,7 @@ const navigationList = [
       {
         name: '空投',
         url: 'https://airportal.cn/',
-        description: '临时云盘,去打印店不再需要登录qq或微信',
+        description: '临时云盘,不限速,无需登录',
         icon: 'zondicons:cloud-upload',
       },
       {
@@ -98,16 +97,45 @@ const navigationList = [
         icon: '',
       },
       {
+        name: 'Vercel',
+        url: 'https://vercel.com/',
+        description: '没有服务器也可以快速部署自己的前端项目',
+        icon: 'logos:vercel-icon',
+      },
+    ],
+  },
+  {
+    type: '图片资源',
+    itemList: [
+      {
         name: 'WallHaven',
         url: 'https://wallhaven.cc/',
         description: '高质量壁纸网站',
         icon: 'logos:realm',
       },
       {
-        name: 'Vercel',
-        url: 'https://vercel.com/',
-        description: '没有服务器也可以快速部署自己的前端项目',
-        icon: 'logos:vercel-icon',
+        name: 'Pixivel',
+        url: 'https://pixivel.moe/',
+        description: '国内也能上p站',
+        icon: 'logos:realm',
+      },
+      {
+        name: 'Vilipix',
+        url: 'https://www.vilipix.com/',
+        description: '国内也能上p站',
+        icon: 'logos:realm',
+      },
+      {
+        name: 'WALLPAPER ABYSS',
+        url: 'https://wall.alphacoders.com/?lang=Chinese',
+        description: '高质量壁纸网站',
+        icon: 'logos:realm',
+      },
+      {
+        name: 'Artstation',
+        url: 'https://www.artstation.com/?sort_by=community&dimension=all',
+        description: '知名素材库',
+        icon: 'logos:realm',
       },
     ],
   },

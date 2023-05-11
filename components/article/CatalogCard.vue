@@ -2,9 +2,7 @@
   <div>
     <div class="flex items-center">
       <span :class="isLight ? 'text-[#1a1a1a]' : 'text-[#fff]'">目录</span>
-      <span class="text-[#a9a9a9] text-[18px] ml-auto">{{
-        state.progress
-      }}</span>
+      <span class="text-[#a9a9a9] text-[18px] ml-auto">{{ state.progress }}</span>
     </div>
     <div class="border-t-1 border-t-[#a9a9a9] w-[200px]"></div>
     <div>
@@ -16,9 +14,7 @@
           :class="[
             'catalog-item',
             state.currentTitle.id == title.id ? 'active' : 'not-active',
-            isLight
-              ? 'text-[#1a1a1a]'
-              : 'text-[#fff] hover:bg-gray-400 hover:bg-opacity-60 hover:text-[#1a1a1a]',
+            isLight ? 'text-[#1a1a1a]' : 'text-[#fff] hover:bg-gray-400 hover:bg-opacity-60 hover:text-[#1a1a1a]',
           ]"
           :style="{ marginLeft: title.level * 20 + 'px' }"
           v-show="title.isVisible"
@@ -113,9 +109,7 @@ const getTitles = () => {
 
 // 监听滚动事件并更新样式
 window.addEventListener('scroll', function () {
-  state.progress =
-    parseInt((window.scrollY / document.documentElement.scrollHeight) * 100) +
-    '%';
+  state.progress = parseInt((window.scrollY / document.documentElement.scrollHeight) * 100) + '%';
 
   let visibleTitles = [];
   for (let i = state.titles.length - 1; i >= 0; i--) {

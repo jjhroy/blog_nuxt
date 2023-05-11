@@ -5,7 +5,11 @@
 </template>
 
 <script setup lang="ts">
-import ArticleList from "~~/pages/article/index.vue";
+import ArticleList from '~~/pages/article/index.vue';
+
+onMounted(() => {
+  console.log('device', getDeviceInfo());
+});
 </script>
 
 <style scoped></style>

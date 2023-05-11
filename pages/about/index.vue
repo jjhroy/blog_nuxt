@@ -1,5 +1,5 @@
 <template>
-  <CommonInfoCard class="m-auto"> </CommonInfoCard>
+  <CommonInfoCard class="m-auto"></CommonInfoCard>
 </template>
 
 <script setup lang="ts">

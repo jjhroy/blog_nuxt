@@ -1,6 +1,5 @@
 <template>
-  <div
-    class="rounded-xl bg-[#fff] dark:bg-gray-900 py-4 px-6 shadow-around flex flex-col gap-y-3">
+  <div class="rounded-xl bg-[#fff] dark:bg-gray-900 py-4 px-6 shadow-around flex flex-col gap-y-3">
     <div class="flex justify-between text-[15px]">
       <div class="text-gray-400 flex items-center gap-x-1">
         <Icon name="icon-park-outline:calendar"></Icon>
@@ -33,9 +32,9 @@
         <Icon name="bx:bxs-purchase-tag"></Icon>
         标签
       </div>
-      <div class="flex">
+      <div class="flex gap-x-2">
         <span
-          class="text-[#1a1a1a] dark:text-[#fff]"
+          class="text-[#1a1a1a] dark:text-[#fff] bg-[#F0F5FF] text-[13px] leading-4 rounded-md px-2 py-[2px] cursor-pointer"
           v-for="{ tagName, id } in articleDetail?.tagDTOList"
           :key="id">
           {{ tagName }}
@@ -44,7 +43,7 @@
     </div>
     <div class="flex justify-between text-[15px]">
       <div class="text-gray-400 flex items-center gap-x-1">
-        <Icon name="teenyicons:eye-outline"></Icon>
+        <Icon name="iconamoon:eye-fill"></Icon>
         浏览量
       </div>
       <div class="text-[#1a1a1a] dark:text-[#fff]">

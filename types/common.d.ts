@@ -17,3 +17,28 @@ export interface cataLogNode {
     scrollTop: number,
     isVisible: boolean
 }
+
+
+export interface IVilipixImgItem {
+    picture_id: string
+    title: string
+    regular_url: string
+    original_url: string
+}
+export interface IVilipixImgList {
+    code: number
+    data: {
+        count: number
+        rows: IVilipixImgItem[]
+    }
+}
+
+export interface IJuejieArticleItem {
+    content: {
+        title: string
+        content_id: string
+    }
+}
+export interface IJuejieList {
+    data: IJuejieArticleItem[]
+}

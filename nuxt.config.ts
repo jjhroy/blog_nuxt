@@ -8,6 +8,7 @@ export default defineNuxtConfig({
         }
     },
     modules: [
+        'nuxt-lodash',
         '@nuxtjs/tailwindcss',
         'nuxt-icon',
         '@nuxt/image-edge',
@@ -24,6 +25,17 @@ export default defineNuxtConfig({
             },
         ],
     ],
+    lodash: {
+        prefix: "_",
+        prefixSkip: ["string"],
+        upperAfterPrefix: false,
+        exclude: ["map"],
+        alias: [
+            ["camelCase", "stringToCamelCase"], // => stringToCamelCase
+            ["kebabCase", "stringToKebab"], // => stringToKebab
+            ["isDate", "isLodashDate"], // => _isLodashDate
+        ],
+    },
     devServer: {
         // host: '127.0.0.1',
         // https: true,
