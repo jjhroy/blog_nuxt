@@ -14,7 +14,9 @@
         class="my-10 cursor-pointer text-[#1a1a1a] text-[14px] text-opacity-60 font-semibold hover:text-opacity-90">
         加载更多
       </div>
-      <CommonLoadMore class="my-10" v-else></CommonLoadMore>
+      <CommonLoadMore
+        class="my-10"
+        v-else></CommonLoadMore>
     </div>
   </div>
 </template>

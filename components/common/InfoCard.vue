@@ -8,7 +8,7 @@
         src="https://upload.linkstarted.top/config/0918a38bb59fd3ee1cd1a141838c4e37.jpeg" />
       <div class="m-2 flex items-center gap-x-2">
         <span class="text-base text-slate-900 font-semibold dark:text-slate-300">JunHong Jiang</span>
-        <span class="text-xs text-gray-500">john roy</span>
+        <span class="text-xs text-gray-500">roy</span>
       </div>
     </div>
     <div class="my-3">
@@ -16,7 +16,7 @@
         <h3>关于我</h3>
 
         <p>
-          23岁(1999)，男，毕业于国内不知名本科，毕业后目前在厦门工作
+          99年生人，毕业于国内不知名本科，毕业后目前在厦门工作
           <span class="line-through">太菜了不配卷考研</span>
         </p>
         <p>前端工程师，其实就是前端小白。</p>

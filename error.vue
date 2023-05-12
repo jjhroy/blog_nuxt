@@ -42,9 +42,7 @@ onMounted(() => {
     object.value,
     `嘿！你小可爱的还真是个人才`,
     callBack,
-    () => {}
+    () => {},
   );
 });
 </script>
-
-<style scoped></style>
