@@ -42,3 +42,9 @@ export interface IJuejieArticleItem {
 export interface IJuejieList {
     data: IJuejieArticleItem[]
 }
+
+export interface IIpAddressResp {
+    data: [{
+        location: string
+    }]
+}

@@ -22,8 +22,6 @@ export const articleStore = defineStore(ARTICLE_STORE, () => {
         })
         if (data.value?.length === 0) isEnd.value = true
         articleList.value = [...oldList, ...(data.value ?? [])];
-        console.log(data.value, 'list');
-
     }
     /**
      * 根据ID获取文章详情

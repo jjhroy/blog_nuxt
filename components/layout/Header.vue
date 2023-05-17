@@ -1,6 +1,9 @@
 <template>
-  <header class="flex items-center justify-between mobile:p-6 p-6 text-gray-500 dark:text-[#fff] dark:bg-black">
-    <div class="mobile:text-[16px] text-[15px] font-semibold">Welcome!</div>
+  <header
+    class="flex items-center justify-between mobile:p-6 p-6 text-gray-500 dark:text-[#fff] dark:bg-black">
+    <div class="mobile:text-[16px] text-[15px] font-semibold cursor-pointer">
+      Welcome!
+    </div>
     <nav class="flex mobile:text-[16px] text-[15px]">
       <div class="flex mobile:gap-x-5 gap-x-3 items-center font-sans">
         <NuxtLink
@@ -43,6 +46,7 @@
 </template>
 <script setup lang="ts">
 import { useGlobalStore, globalStore } from '~~/store/global';
+
 const { isLight } = useGlobalStore();
 const { changeTheme } = globalStore();
 </script>

@@ -1,6 +1,16 @@
 <template>
   <!--文章列表-->
   <div class="flex flex-col">
+    <div
+      class="flex items-center gap-x-[6px] text-[18px] leading-6 mt-16 <notebook:mt-6 mb-4">
+      <div class="text-[#3B82F6] font-semibold">文章</div>
+      <div class="text-5xl font-extrabold ...">
+        <span
+          class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+          Articles
+        </span>
+      </div>
+    </div>
     <CommonArticleCard
       v-for="item in newestArticleList"
       :key="item.id"
@@ -50,3 +60,13 @@ const loadMore = async () => {
   }, 500);
 };
 </script>
+<style scoped>
+.title-bg {
+  background: linear-gradient(269.68deg, #4c72f9 0%, #4e89fb 99.89%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  opacity: 0.2;
+}
+</style>

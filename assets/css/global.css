@@ -1,0 +1,28 @@
+// for vue toast style
+.Vue-Toastification__container {
+  padding-top: 86px;
+}
+.Vue-Toastification__toast--success {
+  background-color: white !important;
+  color: #18a058;
+}
+
+.Vue-Toastification__toast--info {
+  background-color: white !important;
+  color: #2080ff;
+}
+.Vue-Toastification__toast--error {
+  background-color: white !important;
+  color: #d03050;
+}
+.Vue-Toastification__toast--warning {
+  background-color: white !important;
+  color: #f0a020;
+}
+.Vue-Toastification__toast-body {
+  color: #333 !important;
+}
+
+.Vue-Toastification__close-button {
+  color: #333;
+}

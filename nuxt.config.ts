@@ -36,6 +36,11 @@ export default defineNuxtConfig({
             ["isDate", "isLodashDate"], // => _isLodashDate
         ],
     },
+    build: {
+        transpile: ['vue-toastification'],
+
+    },
+    css: ['vue-toastification/dist/index.css', '~~/assets/css/global.css'],
     devServer: {
         // host: '127.0.0.1',
         // https: true,

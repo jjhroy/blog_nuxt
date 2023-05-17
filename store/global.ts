@@ -1,8 +1,11 @@
 import { GLOBAL_STORE } from '~/configs/store'
 import { storeToRefs } from 'pinia'
+import { commonApi } from '~~/services/common'
 
 export const globalStore = defineStore(GLOBAL_STORE, () => {
     const userExtraData = ref({ username: 'jjh' })
+    const visitorIp = ref('127.0.0.1')
+    const visitorAddress = ref('M78星云')
     const isLight = ref(true)
     const websiteInfo = ref({
         viewsCount: "",
@@ -23,10 +26,26 @@ export const globalStore = defineStore(GLOBAL_STORE, () => {
             websiteRecordNo: "",
         }
     })
+    /**
+     * 主题切换
+     */
     const changeTheme = () => {
         isLight.value = !isLight.value
     }
-    return { userExtraData, changeTheme, websiteInfo, isLight }
+    /**
+     * 获取访客ip地址信息
+     */
+    const getVisitorIp = async () => {
+        const { data: ip } = await commonApi.getIpAddress()
+        visitorIp.value =
+            ip.value?.match(/(?<=\")(.+?)(?=\")/g)?.shift() ?? '127.0.0.1';
+
+    }
+    const getVisitorAddress = async () => {
+        const { data: address } = await commonApi.getVisitorAddress()
+        visitorAddress.value = address.value?.data[0].location ?? 'M78星云';
+    }
+    return { userExtraData, changeTheme, websiteInfo, isLight, getVisitorIp, visitorIp, visitorAddress, getVisitorAddress }
 
 }, {
     persist: {

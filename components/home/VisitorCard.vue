@@ -1,46 +1,37 @@
 <template>
-  <div>
-    <p>{{ object.output }}</p>
-    <p class="flex items-center gap-x-1">
-      <span>{{ visitorInfo.os.name }}</span>
-      <Icon :name="visitorInfo.os.icon"></Icon>
-    </p>
-    <p class="flex items-center gap-x-1">
-      <span>{{ visitorInfo.browser.name }}</span>
-      <Icon :name="visitorInfo.browser.icon"></Icon>
-    </p>
-  </div>
+  <ClientOnly>
+    <div class="absolute top-4 left-4 border-1 border py-4 px-6 rounded-md">
+      <p class="flex items-center gap-x-1 my-2">
+        <Icon name="icon-park-outline:database-network-point"></Icon>
+        {{ visitorIp }}
+      </p>
+      <p class="flex items-center gap-x-1 my-2">
+        <Icon name="material-symbols:location-on-rounded"></Icon>
+        {{ visitorAddress }}
+      </p>
+      <p class="flex items-center gap-x-1 my-2">
+        OS：
+        <!-- <span>{{ visitorInfo.os.name }}</span> -->
+        <!-- <Icon :name="visitorInfo.os.icon"></Icon> -->
+      </p>
+      <p class="flex items-center gap-x-1">
+        浏览器：
+        <!-- <span>{{ visitorInfo.browser.name }}</span> -->
+        <!-- <Icon :name="visitorInfo.browser.icon"></Icon> -->
+      </p>
+    </div>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">
-import EasyTyper from 'easy-typer-js';
+import { globalStore, useGlobalStore } from '~~/store/global';
 
-const object = ref({
-  output: '',
-  isEnd: false,
-  speed: 50,
-  singleBack: false,
-  sleep: 1,
-  type: 'custom',
-  backSpeed: 140,
-  sentencePause: false,
-});
+const { getVisitorAddress, getVisitorIp } = globalStore();
+const { visitorAddress, visitorIp } = useGlobalStore();
 
-const visitorInfo = getDeviceInfo();
-
-const callBack = async (instance: EasyTyper) => {
-  //   const content = await useFetch('https://v1.hitokoto.cn/?c=i');
-  //   //@ts-ignore
-  instance.input = ['OS: MacOS\n'];
-  instance.close();
-};
-
-onMounted(() => {
-  const typed = new EasyTyper(
-    object.value,
-    `Hello traveler,welcome to my blog`,
-    callBack,
-    () => {},
-  );
-});
+try {
+  await Promise.allSettled([getVisitorAddress(), getVisitorIp()]);
+} catch (error) {
+  showMessage.error('获取地址失败');
+}
 </script>

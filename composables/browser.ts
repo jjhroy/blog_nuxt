@@ -1,6 +1,6 @@
 
 /**
- * 获取访问设备信息
+ * 获取访客设备信息
  * @returns 
  */
 
@@ -22,8 +22,6 @@ export const getDeviceInfo = () => {
         chrome: 'logos:chrome',
         opera: 'logos:opera'
     }
-
-
 
     /* 版本信息获取 */
     // 各主流浏览器
@@ -82,4 +80,23 @@ export const getDeviceInfo = () => {
     };
 
     return { os: { name: getOS().name, icon: getOS().icon }, browser: getBrowser() }
+}
+
+/**
+ * 获取访客ip信息
+ */
+
+export const getIpAddressInfo = async () => {
+
+    // const ipAddress = ''
+    // const visitorAddress = ''
+
+    // try {
+    //     await Promise.allSettled([
+    //         getIpAddress(),
+    //         getVisitorAddress(),
+    //     ])
+    // } catch (error) {
+    //     redirectTo404Page()
+    // }
 }
