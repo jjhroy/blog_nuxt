@@ -1,7 +1,9 @@
 <template>
   <div class="bg-[#edf2f7] dark:bg-black">
     <div class="text-center my-20">
-      <span class="font-semibold text-[28px]">{{ articleDetail?.articleTitle }}</span>
+      <span class="font-semibold text-[28px]">
+        {{ articleDetail?.articleTitle }}
+      </span>
     </div>
     <div class="w-[1200px] mx-auto pb-10 flex justify-between">
       <div class="flex-[3/4]">
@@ -18,6 +20,7 @@
 <script setup lang="ts">
 import Sidebar from './Sidebar.vue';
 import Content from './Content.vue';
+import 'md-editor-v3/lib/style.css';
 import { useArticleStore, articleStore } from '~~/store/article';
 
 const route = useRoute();

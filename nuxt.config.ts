@@ -40,7 +40,7 @@ export default defineNuxtConfig({
         transpile: ['vue-toastification'],
 
     },
-    css: ['vue-toastification/dist/index.css', '~~/assets/css/global.css'],
+    css: ['vue-toastification/dist/index.css', '~~/assets/css/global.css', 'md-editor-v3/lib/style.css'],
     devServer: {
         // host: '127.0.0.1',
         // https: true,

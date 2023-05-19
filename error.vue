@@ -16,7 +16,6 @@
 </template>
 
 <script setup lang="ts">
-// import TypeIt from "typeit";
 import EasyTyper from 'easy-typer-js';
 
 const object = ref({

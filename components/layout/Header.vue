@@ -1,13 +1,15 @@
 <template>
   <header
     class="flex items-center justify-between mobile:p-6 p-6 text-gray-500 dark:text-[#fff] dark:bg-black">
-    <div class="mobile:text-[16px] text-[15px] font-semibold cursor-pointer">
+    <NuxtLink
+      to="/"
+      class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500">
       Welcome!
-    </div>
+    </NuxtLink>
     <nav class="flex mobile:text-[16px] text-[15px]">
       <div class="flex mobile:gap-x-5 gap-x-3 items-center font-sans">
         <NuxtLink
-          to="/"
+          to="/blog"
           class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500">
           Blog
         </NuxtLink>

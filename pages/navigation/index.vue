@@ -24,7 +24,8 @@
         class="my-3 font-semibold text-[#333333] dark:text-[#fff] text-[20px] antialiased">
         {{ type }}
       </div>
-      <div class="mobile:w-[640px] tablet:w-[860px] notebook:w-[1080px] w-[340px] flex flex-wrap gap-4">
+      <div
+        class="mobile:w-[640px] tablet:w-[860px] notebook:w-[1080px] w-[340px] flex flex-wrap gap-4">
         <a
           v-for="({ name, url, description, icon, color }, index) in itemList"
           :key="index"
@@ -36,7 +37,10 @@
               :name="icon === '' ? 'mdi:web' : icon"
               size="20"
               :style="{ color: color }"></Icon>
-            <span class="mobile:text-[16px] text-[14px] ml-2 font-semibold truncate">{{ name }}</span>
+            <span
+              class="mobile:text-[16px] text-[14px] ml-2 font-semibold truncate">
+              {{ name }}
+            </span>
           </div>
           <div
             class="mobile:text-[13px] mobile:leading-5 text-[12px] leading-4 text-gray-600 text-opacity-90 line-clamp-2">
@@ -277,12 +281,12 @@ const navigationList = [
         description: '无广告的在线漫画网,更新速度稍慢',
         icon: 'twemoji:blue-book',
       },
-      {
-        name: 'Switch520',
-        url: 'https://xxxxx525.com/',
-        description: '低调,超全学习版软件(bushi',
-        icon: 'icon-park:switch-nintendo',
-      },
+      // {
+      //   name: 'Switch520',
+      //   url: 'https://xxxxx525.com/',
+      //   description: '低调,超全学习版软件(bushi',
+      //   icon: 'icon-park:switch-nintendo',
+      // },
       {
         name: 'NavAcg',
         url: 'https://www.navacg.net/',

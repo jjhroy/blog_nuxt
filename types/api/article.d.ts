@@ -67,6 +67,11 @@ export interface recommendArticle {
     createTime: Date
 }
 
-export interface Theme{
-    themeName:string
+export interface Theme {
+    themeName: string
+}
+
+export interface articleShowList {
+    recordList: articles[]
+    year: number
 }
