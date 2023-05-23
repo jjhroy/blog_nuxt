@@ -147,13 +147,43 @@ const navigationList = [
     type: '前端学习',
     itemList: [
       {
+        name: 'Vue3中文',
+        url: 'https://cn.vuejs.org/',
+        description: 'Vue3文档的中文版',
+        icon: 'vscode-icons:file-type-vue',
+      },
+      {
+        name: 'Vue3英文',
+        url: 'https://vuejs.org/',
+        description: 'Vue3官方文档',
+        icon: 'vscode-icons:file-type-vue',
+      },
+      {
+        name: 'VueRouter',
+        url: 'https://router.vuejs.org/zh/',
+        description: 'VueRouter文档的中文版',
+        icon: 'vscode-icons:file-type-vue',
+      },
+      {
+        name: 'Pinia',
+        url: 'https://pinia.vuejs.org/zh/',
+        description: '符合直觉的Vue.js状态管理库,个人觉得比vuex好用',
+        icon: 'logos:pinia',
+      },
+      {
+        name: 'Vite',
+        url: 'https://cn.vitejs.dev/',
+        description: '下一代的前端工具链,为开发提供极速响应',
+        icon: 'vscode-icons:file-type-vite',
+      },
+      {
         name: 'Nuxt3中文',
         url: 'https://nuxt.com.cn',
         description: 'Nuxt3文档的中文版',
         icon: 'vscode-icons:file-type-nuxt',
       },
       {
-        name: 'Nuxt3',
+        name: 'Nuxt3英文',
         url: 'https://nuxt.com',
         description: 'Nuxt3官方文档',
         icon: 'vscode-icons:file-type-nuxt',

@@ -13,14 +13,16 @@
     </div> -->
     <div
       v-for="(item, index) in newestArticleList"
+      class="flex flex-col gap-y-4"
       :key="index">
-      {{ item.year }}
+      <div class="text-[36px] font-semibold text-[#1a1a1a] -ml-12">
+        「{{ item.year }}」
+      </div>
       <CommonArticleCard
         v-for="(article, _index) in item.recordList"
         :key="_index"
         :article="article"
-        ref="scrollComponent"
-        class="mt-4" />
+        ref="scrollComponent" />
     </div>
 
     <div v-show="!isEnd">

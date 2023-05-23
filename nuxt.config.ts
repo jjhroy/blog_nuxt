@@ -38,9 +38,17 @@ export default defineNuxtConfig({
     },
     build: {
         transpile: ['vue-toastification'],
+        postcss: {
+            postcssOptions: {
+                plugins: {
+                    tailwindcss: {},
+                    autoprefixer: {},
+                },
+            },
+        },
 
     },
-    css: ['vue-toastification/dist/index.css', '~~/assets/css/global.css', 'md-editor-v3/lib/style.css'],
+    css: ['vue-toastification/dist/index.css', '~~/assets/css/global.css', 'md-editor-v3/lib/style.css', '~~/assets/css/main.css',],
     devServer: {
         // host: '127.0.0.1',
         // https: true,

@@ -1,5 +1,6 @@
 <template>
-  <div class="rounded-xl bg-[#fff] dark:bg-gray-900 py-4 px-6 shadow-around flex flex-col gap-y-3">
+  <div
+    class="rounded-xl bg-[#fff] dark:bg-gray-900 py-4 px-6 shadow-around flex flex-col gap-y-3">
     <div class="flex justify-between text-[15px]">
       <div class="text-gray-400 flex items-center gap-x-1">
         <Icon name="icon-park-outline:calendar"></Icon>

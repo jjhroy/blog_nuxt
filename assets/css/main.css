@@ -1,0 +1,11 @@
+/* 📄 main.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.my-custom-style {
+  font-size: 60px;
+}
+
+.flex-center {
+}
