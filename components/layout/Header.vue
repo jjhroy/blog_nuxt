@@ -8,6 +8,16 @@
     </NuxtLink>
     <nav class="flex mobile:text-[16px] text-[15px]">
       <div class="flex mobile:gap-x-5 gap-x-3 items-center font-sans">
+        <div
+          class="border-b border-[#1a1a1a] h-6 group flex items-center justify-start hover:w-[180px] transition-all duration-500 relative">
+          <Icon
+            name="iconamoon:search-bold"
+            size="18"
+            class="mr-2"></Icon>
+          <input
+            class="outline-none bg-transparent w-[120px] h-5 text-[14px] opacity-0 transition-all duration-500 group-hover:opacity-100"
+            placeholder="请输入关键词" />
+        </div>
         <NuxtLink
           to="/blog"
           class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500">

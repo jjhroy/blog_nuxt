@@ -2,12 +2,10 @@ export default defineNuxtConfig({
     app: {
         head: {
             title: 'Mongo Blog',
-            // meta: [
-            //     { 'http-equiv': 'Content-Security-Policy', content: 'upgrade-insecure-requests' }
-            // ]
         }
     },
     modules: [
+        '@nuxt/content',
         'nuxt-lodash',
         '@nuxtjs/tailwindcss',
         'nuxt-icon',
