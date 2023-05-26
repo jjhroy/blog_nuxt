@@ -38,7 +38,7 @@
               size="20"
               :style="{ color: color }"></Icon>
             <span
-              class="mobile:text-[16px] text-[14px] ml-2 font-semibold truncate">
+              class="mobile:text-[15px] text-[14px] ml-2 font-semibold truncate">
               {{ name }}
             </span>
           </div>
@@ -175,6 +175,12 @@ const navigationList = [
         url: 'https://cn.vitejs.dev/',
         description: '下一代的前端工具链,为开发提供极速响应',
         icon: 'vscode-icons:file-type-vite',
+      },
+      {
+        name: 'TypeScript中文手册',
+        url: 'https://www.tsdev.cn/',
+        description: '快速学习TypeScript',
+        icon: 'vscode-icons:file-type-typescript',
       },
       {
         name: 'Nuxt3中文',

@@ -23,6 +23,11 @@ export default defineNuxtConfig({
             },
         ],
     ],
+    content: {
+        markdown: {
+            anchorLinks: false
+        }
+    },
     lodash: {
         prefix: "_",
         prefixSkip: ["string"],
