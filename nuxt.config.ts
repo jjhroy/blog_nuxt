@@ -26,6 +26,16 @@ export default defineNuxtConfig({
     content: {
         markdown: {
             anchorLinks: false
+        },
+        highlight: {
+            // theme: {
+            //     // Default theme (same as single string)
+            //     default: 'github-light',
+            //     // Theme used if `html.dark`
+            //     dark: 'github-dark',
+            //     // Theme used if `html.sepia`
+            //     sepia: 'monokai'
+            // }
         }
     },
     lodash: {
@@ -51,7 +61,7 @@ export default defineNuxtConfig({
         },
 
     },
-    css: ['vue-toastification/dist/index.css', '~~/assets/css/global.css', 'md-editor-v3/lib/style.css', '~~/assets/css/main.css',],
+    css: ['vue-toastification/dist/index.css', '~~/assets/css/global.css'],
     devServer: {
         // host: '127.0.0.1',
         // https: true,

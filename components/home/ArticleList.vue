@@ -13,6 +13,7 @@
     </div>
     <main>
       <ContentList
+        :sort="{ updated_at: -1 }"
         :query="query"
         v-slot="{ list }">
         <div

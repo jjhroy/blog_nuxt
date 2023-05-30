@@ -1,24 +1,24 @@
 <template>
   <div class="m-auto">
-    <ContentDoc v-slot="{ doc }">
-      <article class="dark:text-[#fff] prose prose-slate">
-        <ContentDoc v-slot="{ doc }">
-          <ContentRenderer :value="doc">
-            <ContentRendererMarkdown :value="doc" />
-          </ContentRenderer>
-        </ContentDoc>
-      </article>
-    </ContentDoc>
-    <!-- <ContentRenderer :value="data">
-      <ContentRendererMarkdown :value="data" />
-    </ContentRenderer> -->
+    <article class="dark:text-[#fff] prose prose-slate">
+      <ContentRenderer :value="article">
+        <h1>{{ article?.title }}</h1>
+        <ContentRendererMarkdown :value="article!" />
+      </ContentRenderer>
+    </article>
   </div>
 </template>
 
 <script setup lang="ts">
-// const { data } = await useAsyncData('page-data', () =>
-//   queryContent('/talk/1').findOne(),
-// );
+import { ParsedContentMeta } from '@nuxt/content/dist/runtime/types';
+
+const article = ref<ParsedContentMeta>();
+const route = useRoute();
+try {
+  article.value = await queryContent(route.fullPath).findOne();
+} catch (error) {
+  redirectTo404Page();
+}
 </script>
 
 <style scoped></style>
