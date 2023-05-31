@@ -39,7 +39,6 @@ export const globalStore = defineStore(GLOBAL_STORE, () => {
         const { data: ip } = await commonApi.getIpAddress()
         visitorIp.value =
             ip.value?.match(/(?<=\")(.+?)(?=\")/g)?.shift() ?? '127.0.0.1';
-
     }
     const getVisitorAddress = async () => {
         const { data: address } = await commonApi.getVisitorAddress(visitorIp.value)

@@ -18,10 +18,10 @@ export const commonApi = {
      * @returns 
      */
     getVisitorAddress: (ip: string) => useFetch<IIpAddressResp>(
-        'http://opendata.baidu.com/api.php',
+        'https://opendata.baidu.com/api.php',
         {
             params: {
-                query: ip,
+                query: ip.trim(),
                 resource_id: 6006,
                 oe: 'utf8',
             },
