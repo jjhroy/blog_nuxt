@@ -42,7 +42,7 @@ export const globalStore = defineStore(GLOBAL_STORE, () => {
 
     }
     const getVisitorAddress = async () => {
-        const { data: address } = await commonApi.getVisitorAddress()
+        const { data: address } = await commonApi.getVisitorAddress(visitorIp.value)
         visitorAddress.value = address.value?.data[0].location ?? 'M78星云';
     }
     return { userExtraData, changeTheme, websiteInfo, isLight, getVisitorIp, visitorIp, visitorAddress, getVisitorAddress }

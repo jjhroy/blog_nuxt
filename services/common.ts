@@ -17,11 +17,11 @@ export const commonApi = {
      * 获取ip物理地址
      * @returns 
      */
-    getVisitorAddress: () => useFetch<IIpAddressResp>(
+    getVisitorAddress: (ip: string) => useFetch<IIpAddressResp>(
         'http://opendata.baidu.com/api.php',
         {
             params: {
-                query: '106.122.221.85',
+                query: ip,
                 resource_id: 6006,
                 oe: 'utf8',
             },

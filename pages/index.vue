@@ -15,10 +15,10 @@ import EasyTyper from 'easy-typer-js';
 import { globalStore, useGlobalStore } from '~~/store/global';
 
 const { getVisitorAddress, getVisitorIp } = globalStore();
-const { visitorAddress, visitorIp } = useGlobalStore();
+const { visitorAddress } = useGlobalStore();
 
 try {
-  await Promise.allSettled([getVisitorAddress(), getVisitorIp()]);
+  await Promise.allSettled([getVisitorIp(), getVisitorAddress()]);
 } catch (error) {
   showMessage.error('获取地址失败');
 }
