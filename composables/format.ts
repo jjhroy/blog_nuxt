@@ -42,9 +42,3 @@ export const calcRelativeTime = (
 export const formatDate = (date: string | number | Date, formatTemplate = 'YYYY-MM-DD:HH:mm:ss') => {
     return dayjs(date).format(formatTemplate)
 }
-
-
-
-export const redirectTo404Page = () => {
-    return navigateTo('/404')
-}

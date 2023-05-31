@@ -27,7 +27,10 @@
             class="w-full h-[184px] object-cover rounded-md flex-shrink-0"
             quality="80"
             :src="img.regular_url" />
-          <span class="text-[13px] leading-4 text-center font-semibold antialiased truncate my-4">{{ img.title }}</span>
+          <span
+            class="text-[13px] leading-4 text-center font-semibold antialiased truncate my-4">
+            {{ img.title }}
+          </span>
         </a>
       </li>
     </ul>
@@ -35,18 +38,18 @@
 </template>
 
 <script setup lang="ts">
-import { IVilipixImgList, IJuejieList } from '~~/types/common';
+import { IVilipixImgList } from '~~/interface/gallery/index';
 
 const limit = ref(_random(10, 20));
 
-const { data: imgList, refresh } = await useAsyncData('gallery', () =>
-  $fetch(`https://www.vilipix.com/api/v1/picture/recommand`, {
-    query: {
-      limit: limit.value,
-      offset: 1,
-    },
-  }),
+const { data: imgList, refresh } = await useAsyncData<IVilipixImgList>(
+  'gallery',
+  () =>
+    $fetch(`https://www.vilipix.com/api/v1/picture/recommand`, {
+      query: {
+        limit: limit.value,
+        offset: 1,
+      },
+    }),
 );
 </script>
-
-<style scoped></style>

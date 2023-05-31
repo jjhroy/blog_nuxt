@@ -21,12 +21,10 @@ import { useGlobalStore } from '~~/store/global';
 import { useArticleStore } from '~~/store/article';
 import { MdPreview } from 'md-editor-v3';
 import 'md-editor-v3/lib/preview.css';
-import { DEFAULT_ARTICLE_IMG } from '~~/composables/const';
+import { DEFAULT_ARTICLE_IMG } from '~~/configs/const';
 
 const id = 'preview-only';
 const { articleDetail } = useArticleStore();
 const { isLight } = useGlobalStore();
 const content = ref(articleDetail.value?.articleContent ?? '');
 </script>
-
-<style scoped></style>

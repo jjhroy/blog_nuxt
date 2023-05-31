@@ -1,4 +1,6 @@
-import Toast, { PluginOptions } from 'vue-toastification'
+import { PluginOptions } from 'vue-toastification'
+// @ts-ignore
+import Toast from 'vue-toastification/dist/index.mjs'
 
 // 配置可以参考：https://vue-toastification.maronato.dev/
 const options: PluginOptions = {

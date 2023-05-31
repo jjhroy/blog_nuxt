@@ -100,3 +100,8 @@ export const getIpAddressInfo = async () => {
     //     redirectTo404Page()
     // }
 }
+
+
+export const redirectTo404Page = () => {
+    return navigateTo('/404')
+}

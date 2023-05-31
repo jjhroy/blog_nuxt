@@ -42,7 +42,7 @@ const callBack = async (instance: EasyTyper) => {
 };
 
 onMounted(() => {
-  const typed = new EasyTyper(
+  new EasyTyper(
     object.value,
     `欢迎你，来自${visitorAddress.value.split(' ')[0]}的朋友`,
     callBack,

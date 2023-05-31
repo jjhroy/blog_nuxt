@@ -56,8 +56,7 @@
 
 <script setup lang="ts">
 import { useArticleStore } from '~~/store/article';
-import { formatDate } from '~~/composables/index';
+import { formatDate } from '~~/composables/format';
 
 const { articleDetail } = useArticleStore();
 </script>
-<style scoped></style>

@@ -35,5 +35,3 @@ useHead({
   title: articleDetail.value?.articleTitle,
 });
 </script>
-
-<style scoped></style>

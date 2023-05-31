@@ -1,4 +1,4 @@
-import { IIpAddressResp } from "~/types/common";
+import { IIpAddressResp } from "~/interface/public";
 
 
 export const commonApi = {

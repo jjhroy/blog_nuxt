@@ -20,5 +20,3 @@ try {
   redirectTo404Page();
 }
 </script>
-
-<style scoped></style>

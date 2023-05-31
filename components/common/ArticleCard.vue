@@ -15,20 +15,14 @@
     <span class="flex items-center text-[#888] text-[12px] leading-5">
       {{ calcRelativeTime(article.public_at) }}
     </span>
-    <span class="text-[#888] text-[12px] leading-5 absolute top-0 -left-[40px]">
-      has new!
-    </span>
   </div>
 </template>
 
 <script setup lang="ts">
 import { IArticle } from '~/interface/article';
-import { calcRelativeTime } from '~~/composables/index';
-import { articles } from '~~/types/api/article';
+import { calcRelativeTime } from '~~/composables/format';
 
 defineProps<{
   article: IArticle;
 }>();
 </script>
-
-<style scoped></style>
