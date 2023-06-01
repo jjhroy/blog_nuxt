@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
-    "@vueuse/nuxt": "^9.13.0",
+    "@vueuse/nuxt": "^10.1.2",
     "clipboard": "^2.0.11",
     "easy-typer-js": "^2.1.0",
     "md-editor-v3": "^4.0.2",

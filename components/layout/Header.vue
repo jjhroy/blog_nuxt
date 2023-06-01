@@ -20,6 +20,12 @@
             class="outline-none bg-transparent w-[120px] h-5 text-[14px] opacity-0 transition-all duration-500 group-hover:opacity-100"
             placeholder="请输入关键词" />
         </div> -->
+        <div @click="showSearchModal">
+          <Icon
+            name="iconamoon:search-bold"
+            size="24"
+            class="cursor-pointer"></Icon>
+        </div>
         <NuxtLink
           to="/blog"
           class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
@@ -70,6 +76,6 @@
 import { useGlobalStore, globalStore } from '~~/store/global';
 
 const { isLight } = useGlobalStore();
-const { changeTheme } = globalStore();
+const { changeTheme, showSearchModal } = globalStore();
 const currentRoute = ref(0);
 </script>

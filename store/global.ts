@@ -7,6 +7,7 @@ export const globalStore = defineStore(GLOBAL_STORE, () => {
     const visitorIp = ref('127.0.0.1')
     const visitorAddress = ref('M78星云')
     const isLight = ref(true)
+    const isSearch = ref(false)
     const websiteInfo = ref({
         viewsCount: "",
         articleCount: 0,
@@ -33,6 +34,12 @@ export const globalStore = defineStore(GLOBAL_STORE, () => {
         isLight.value = !isLight.value
     }
     /**
+     * 展示搜索框
+     */
+    const showSearchModal = () => {
+        isSearch.value = !isSearch.value
+    }
+    /**
      * 获取访客ip地址信息
      */
     const getVisitorIp = async () => {
@@ -44,7 +51,7 @@ export const globalStore = defineStore(GLOBAL_STORE, () => {
         const { data: address } = await commonApi.getVisitorAddress(visitorIp.value)
         visitorAddress.value = address.value?.data[0].location ?? 'M78星云';
     }
-    return { userExtraData, changeTheme, websiteInfo, isLight, getVisitorIp, visitorIp, visitorAddress, getVisitorAddress }
+    return { userExtraData, changeTheme, websiteInfo, isLight, getVisitorIp, visitorIp, visitorAddress, getVisitorAddress, isSearch, showSearchModal }
 
 }, {
     persist: {
