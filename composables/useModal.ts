@@ -13,19 +13,22 @@ interface IBasicOption<T extends { onClose?: () => void }> {
 export default function useModal<T>(option: IBasicOption<T>) {
   const container = document.createElement('div')
   document.body.appendChild(container)
+
+
   const app = createApp(
     h(
       MongoModal,
       { onClose: () => container.remove() },
       h(option.wrapperComponent, {
-        ...option.props,
-        onClose: () => {
-          console.log('卸载模态框')
-          container.remove()
-        },
+        mask: false,
+        // onClose: () => {
+        //   console.log('卸载模态框')
+        //   container.remove()
+        // },
       })
     )
   )
+  console.log('创建参数', { ...option.props });
   app.mount(container)
   // 或许可以把所有的app清空
 }

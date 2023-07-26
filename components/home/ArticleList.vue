@@ -1,14 +1,10 @@
 <template>
   <!--文章列表-->
   <div class="flex flex-col">
-    <div
-      class="flex items-center gap-x-[6px] text-[18px] leading-6 mt-16 <notebook:mt-6 mb-4">
+    <div class="flex items-center gap-x-[6px] text-[18px] leading-6 mt-2 <notebook:mt-6 mb-4">
       <div class="text-[#3B82F6] font-semibold">文章</div>
       <div class="text-5xl font-extrabold ...">
-        <span
-          class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
-          Articles
-        </span>
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Articles</span>
       </div>
     </div>
     <main>
@@ -29,10 +25,6 @@
 </template>
 
 <script setup lang="ts">
-import dayjs from 'dayjs';
-import { articleList, articles, articleShowList } from '~/types/api/article';
-import { archives, archiveShowList } from '~/types/api/blog';
-import { useArticleStore, articleStore } from '~~/store/article';
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types';
 
 const query: QueryBuilderParams = { path: '/article' };

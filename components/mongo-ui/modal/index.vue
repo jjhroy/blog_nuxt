@@ -1,26 +1,29 @@
 <template>
   <div
     class="fixed left-0 top-0 w-full h-screen z-[99999] flex justify-center items-center"
-    style="background-color: rgba(0, 0, 0, 0.4)">
-    <div
-      v-if="show"
-      :class="show ? 'animate-open' : 'animate-close'">
-      <slot :="props" />
-    </div>
+    style="background-color: rgba(0, 0, 0, 0.4)"
+    @click.stop="test"></div>
+  <div
+    v-if="show"
+    class="min-w-[300px] min-h-[140px] bg-white rounded-lg z-[999999] absolute top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2"
+    :class="show ? 'animate-open' : 'animate-close'">
+    <slot :="props" />
   </div>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{ onClose: () => void }>();
+const props = defineProps<{
+  onClose: () => void;
+}>();
 const show = ref(true);
-
-watch([show], () => {
-  if (show.value === false) {
-    props?.onClose();
-  }
+const test = () => {
+  console.log('test');
+  show.value = false;
+  props?.onClose();
+};
+onMounted(() => {
+  console.log('1', props);
 });
-
-provide('_use_modal_show_', show);
 </script>
 <style scoped lang="scss">
 .animate-open {
@@ -34,18 +37,22 @@ provide('_use_modal_show_', show);
 @keyframes open {
   from {
     transform: scale(0.8);
+    transform: translate(-100%, 100%);
   }
   to {
     transform: scale(1);
+    transform: translate(-50%, -50%);
   }
 }
 
 @keyframes close {
   from {
     transform: scale(1);
+    transform: translate(-50%, -50%);
   }
   to {
     transform: scale(0.8);
+    transform: translate(-100%, 100%);
   }
 }
 </style>

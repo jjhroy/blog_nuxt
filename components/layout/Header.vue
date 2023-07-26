@@ -1,15 +1,14 @@
 <template>
-  <header
-    class="flex items-center justify-between mobile:p-6 p-6 text-gray-500 dark:text-[#fff] dark:bg-black">
+  <header class="flex items-center justify-between mobile:p-6 p-4 text-gray-500 dark:text-[#fff] dark:bg-black">
     <NuxtLink
       to="/"
-      class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
+      class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500 mobile:text-[16px] text-[14px]"
       :class="{ 'text-[#1a1a1a]': currentRoute === 0 }"
       @click="currentRoute = 0">
-      Welcome!
+      Bochi
     </NuxtLink>
-    <nav class="flex mobile:text-[16px] text-[15px]">
-      <div class="flex mobile:gap-x-5 gap-x-3 items-center font-sans">
+    <nav class="flex mobile:text-[16px] text-[14px]">
+      <div class="flex mobile:gap-x-5 gap-x-2 items-center font-sans">
         <!-- <div
           class="border-b border-[#1a1a1a] h-6 group flex items-center justify-start hover:w-[180px] transition-all duration-500 relative">
           <Icon
@@ -20,12 +19,12 @@
             class="outline-none bg-transparent w-[120px] h-5 text-[14px] opacity-0 transition-all duration-500 group-hover:opacity-100"
             placeholder="请输入关键词" />
         </div> -->
-        <div @click="showSearchModal">
+        <!-- <div @click="searchModal">
           <Icon
             name="iconamoon:search-bold"
             size="24"
             class="cursor-pointer"></Icon>
-        </div>
+        </div> -->
         <NuxtLink
           to="/blog"
           class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
@@ -74,8 +73,21 @@
 </template>
 <script setup lang="ts">
 import { useGlobalStore, globalStore } from '~~/store/global';
+import SearchForm from '../common/SearchForm.vue';
 
 const { isLight } = useGlobalStore();
 const { changeTheme, showSearchModal } = globalStore();
 const currentRoute = ref(0);
+
+const searchModal = () => {
+  return useModal({
+    wrapperComponent: SearchForm,
+    props: {
+      maskClose: true,
+      onRemove: () => {
+        showSearchModal();
+      },
+    },
+  });
+};
 </script>

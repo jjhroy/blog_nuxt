@@ -1,52 +1,57 @@
 <template>
-  <div class="flex flex-col mx-auto gap-x-6">
-    <div class="flex items-center gap-x-4">
-      <Icon
-        name="tabler:category"
-        size="24"></Icon>
-      <div
-        v-for="({ type }, index) in navigationList"
-        :key="index"
-        class="flex rounded-md px-4 py-2 cursor-pointer text-[16px] leading-[21px]"
-        :class="{
-          'text-[#3B82F6] bg-[#F0F5FF]': index === currentType,
-          'text-[#7A7A7A] bg-[#F6F6F7]': index !== currentType,
-        }"
-        @click="selectCategory(index, type)">
-        <span class="m-auto">{{ type }}</span>
+  <div class="flex flex-col mobile:mx-auto gap-x-6">
+    <div class="relative overflow-hidden h-[52px]">
+      <div class="absolute top-0 left-0 flex items-center gap-x-4 overflow-x-scroll h-[68px]">
+        <div>
+          <Icon
+            name="tabler:category"
+            size="24"></Icon>
+        </div>
+        <div
+          v-for="({ type }, index) in navigationList"
+          :key="index"
+          class="flex flex-shrink-0 rounded-md px-3 py-1 mobile:px-4 mobile:py-2 cursor-pointer text-[13px] mobile:text-[16px] leading-[21px]"
+          :class="{
+            'text-[#3B82F6] bg-[#F0F5FF]': index === currentType,
+            'text-[#7A7A7A] bg-[#F6F6F7]': index !== currentType,
+          }"
+          @click="selectCategory(index, type)">
+          <span class="m-auto">{{ type }}</span>
+        </div>
       </div>
     </div>
-    <div
-      class="flex flex-col flex-wrap"
-      v-for="{ type, itemList } in navigationList">
+
+    <div class="mobile:px-0 px-4">
       <div
-        :id="type"
-        class="my-3 font-semibold text-[#333333] dark:text-[#fff] text-[20px] antialiased">
-        {{ type }}
-      </div>
-      <div
-        class="mobile:w-[640px] tablet:w-[860px] notebook:w-[1080px] w-[340px] flex flex-wrap gap-4">
-        <a
-          v-for="({ name, url, description, icon, color }, index) in itemList"
-          :key="index"
-          class="mobile:h-[100px] mobile:w-[200px] w-[160px] h-[90px] bg-[#fff] dark:bg-[#1a1a1a] dark:text-[#fff] px-4 py-3 rounded-md card-shadow cursor-pointer"
-          target="_blank"
-          :href="url">
-          <div class="flex items-center mb-2">
-            <Icon
-              :name="icon === '' ? 'mdi:web' : icon"
-              size="20"
-              :style="{ color: color }"></Icon>
-            <span
-              class="mobile:text-[15px] text-[14px] ml-2 font-semibold truncate">
-              {{ name }}
-            </span>
-          </div>
-          <div
-            class="mobile:text-[13px] mobile:leading-5 text-[12px] leading-4 text-gray-600 text-opacity-90 line-clamp-2">
-            {{ description }}
-          </div>
-        </a>
+        class="flex flex-col flex-wrap"
+        v-for="{ type, itemList } in navigationList">
+        <div
+          :id="type"
+          class="my-3 font-semibold text-[#333333] dark:text-[#fff] text-[20px] antialiased">
+          {{ type }}
+        </div>
+        <div class="max-w-[1080px] flex flex-wrap gap-y-3 gap-x-[2%] mobile:gap-4 mobile:justify-normal">
+          <a
+            v-for="({ name, url, description, icon, color }, index) in itemList"
+            :key="index"
+            class="mobile:h-[100px] mobile:w-[200px] w-[49%] h-[90px] bg-[#fff] dark:bg-[#1a1a1a] dark:text-[#fff] px-4 py-3 rounded-md card-shadow cursor-pointer"
+            target="_blank"
+            :href="url">
+            <div class="flex items-center mb-2">
+              <Icon
+                :name="icon === '' ? 'mdi:web' : icon"
+                size="20"
+                :style="{ color: color }"></Icon>
+              <span class="mobile:text-[15px] text-[14px] ml-2 font-semibold truncate">
+                {{ name }}
+              </span>
+            </div>
+            <div
+              class="mobile:text-[13px] mobile:leading-5 text-[12px] leading-4 text-gray-600 text-opacity-90 line-clamp-2">
+              {{ description }}
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>

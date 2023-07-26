@@ -5,7 +5,7 @@
     <NuxtLayout>
       <NuxtLoadingIndicator />
       <NuxtPage />
-      <MongoUiBacktop class="fixed bottom-[130px] right-20" />
+      <MongoUiBacktop class="fixed bottom-[130px] right-4" />
     </NuxtLayout>
   </div>
 </template>

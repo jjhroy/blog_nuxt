@@ -1,6 +1,5 @@
 <template>
-  <figure
-    class="bg-[#fff] dark:bg-[#1a1a1a] p-4 w-[800px] rounded-lg shadow-around">
+  <figure class="bg-[#fff] dark:bg-[#1a1a1a] p-4 rounded-lg shadow-around mt-4 mobile:w-auto w-[360px]">
     <div class="flex">
       <MongoUiAvatar
         class="-mt-10"
@@ -8,15 +7,12 @@
         :size="80"
         src="https://upload.linkstarted.top/config/0918a38bb59fd3ee1cd1a141838c4e37.jpeg" />
       <div class="m-2 flex items-center gap-x-2">
-        <span
-          class="text-base text-slate-900 font-semibold dark:text-slate-300">
-          JunHong Jiang
-        </span>
+        <span class="text-base text-slate-900 font-semibold dark:text-slate-300">JunHong Jiang</span>
         <span class="text-xs text-gray-500">roy</span>
       </div>
     </div>
     <div class="my-3">
-      <article class="prose dark:text-[#fff]">
+      <article class="prose dark:text-[#fff] text-[12px] mobile:text-[14px]">
         <h3>关于我</h3>
 
         <p>
@@ -24,9 +20,7 @@
           <span class="line-through">太菜了不配卷考研</span>
         </p>
         <p>前端工程师，其实就是前端小白。</p>
-        <p>
-          写代码以外的时间会打打篮球和健身，当然也会打游戏(~批 uid:100836108)
-        </p>
+        <p>写代码以外的时间会打打篮球和健身，当然也会打游戏(~批 uid:100836108)</p>
         <p>高中比较喜欢二次元，工作后就很少看了，最喜欢的番是冰菓和fate</p>
 
         <h3>关于本站</h3>

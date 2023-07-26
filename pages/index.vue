@@ -2,8 +2,7 @@
   <div class="flex-grow flex">
     <div class="m-auto flex flex-col">
       <HomeCodingCat class="mx-auto"></HomeCodingCat>
-      <div
-        class="text-[40px] leading-10 font-semibold text-[#2a2a2a] text-center h-[40px]">
+      <div class="text-[40px] leading-10 font-semibold text-[#2a2a2a] text-center h-[40px]">
         <div>{{ object.output }}</div>
       </div>
     </div>
@@ -41,12 +40,17 @@ const callBack = async (instance: EasyTyper) => {
   instance.play();
 };
 
+useHead({
+  meta: [
+    {
+      property: 'og:image',
+      name: 'icon',
+      content: 'https://img.amz123.com/upload/index/amz123_top_logo.svg',
+    },
+  ],
+});
+
 onMounted(() => {
-  new EasyTyper(
-    object.value,
-    `欢迎你，来自${visitorAddress.value.split(' ')[0]}的朋友`,
-    callBack,
-    () => {},
-  );
+  new EasyTyper(object.value, `欢迎你，来自${visitorAddress.value.split(' ')[0]}的朋友`, callBack, () => {});
 });
 </script>
