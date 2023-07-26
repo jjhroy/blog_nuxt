@@ -43,9 +43,13 @@ const callBack = async (instance: EasyTyper) => {
 useHead({
   meta: [
     {
+      name: 'description',
+      content: 'Roy的个人博客',
+    },
+    {
       property: 'og:image',
       name: 'icon',
-      content: 'https://img.amz123.com/upload/index/amz123_top_logo.svg',
+      content: 'https://img.amz123.com/static/images/head_logo.jpg',
     },
   ],
 });
