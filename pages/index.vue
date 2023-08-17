@@ -48,7 +48,6 @@ useHead({
     },
     {
       property: 'og:image',
-      name: 'icon',
       content: 'https://img.amz123.com/static/images/head_logo.jpg',
     },
   ],
