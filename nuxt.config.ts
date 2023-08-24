@@ -5,6 +5,7 @@ export default defineNuxtConfig({
         }
     },
     modules: [
+        '@vueuse/nuxt',
         '@nuxt/content',
         'nuxt-lodash',
         '@nuxtjs/tailwindcss',

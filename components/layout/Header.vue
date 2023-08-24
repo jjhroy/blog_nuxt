@@ -1,10 +1,13 @@
 <template>
-  <header class="flex items-center justify-between mobile:p-6 p-4 text-gray-500 dark:text-[#fff] dark:bg-black">
+  <header
+    class="flex items-center justify-between mobile:p-6 p-4 text-[#999] dark:bg-[#1a1a1a]"
+  >
     <NuxtLink
       to="/"
-      class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500 mobile:text-[16px] text-[14px]"
-      :class="{ 'text-[#1a1a1a]': currentRoute === 0 }"
-      @click="currentRoute = 0">
+      class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-[#42b883] mobile:text-[16px] text-[14px]"
+      :class="{ 'text-[#1a1a1a] dark:text-[#42b883]': currentRoute === '/' }"
+      @click="currentRoute = '/'"
+    >
       Bochi
     </NuxtLink>
     <nav class="flex mobile:text-[16px] text-[14px]">
@@ -26,58 +29,62 @@
             class="cursor-pointer"></Icon>
         </div> -->
         <NuxtLink
-          to="/blog"
-          class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
-          :class="{ 'text-[#1a1a1a]': currentRoute === 1 }"
-          @click="currentRoute = 1">
-          Blog
+          v-for="{ name, path } in navigationList"
+          :key="`${path}${name}`"
+          :to="path"
+          class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-[#42b883]"
+          :class="{
+            'text-[#1a1a1a] dark:text-[#42b883]': currentRoute === path,
+          }"
+          @click="currentRoute = path"
+        >
+          {{ name }}
         </NuxtLink>
-        <NuxtLink
-          to="/about"
-          class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
-          :class="{ 'text-[#1a1a1a]': currentRoute === 2 }"
-          @click="currentRoute = 2">
-          About
-        </NuxtLink>
-        <NuxtLink
-          to="/navigation"
-          class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
-          :class="{ 'text-[#1a1a1a]': currentRoute === 3 }"
-          @click="currentRoute = 3">
-          Navigation
-        </NuxtLink>
-        <NuxtLink
-          to="/gallery"
-          class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-gray-500"
-          :class="{ 'text-[#1a1a1a]': currentRoute === 4 }"
-          @click="currentRoute = 4">
-          Gallery
-        </NuxtLink>
-        <a
-          target="_blank"
-          href="https://github.com/jjhroy">
+        <a target="_blank" href="https://github.com/jjhroy">
           <Icon
             name="mingcute:github-line"
             size="24"
-            class="hover:text-[#1a1a1a] dark:hover:text-gray-500"></Icon>
+            class="hover:text-[#1a1a1a] dark:hover:text-gray-500"
+          ></Icon>
         </a>
         <span @click="changeTheme">
           <Icon
             :name="isLight ? 'ph:sun-bold' : 'ph:moon-bold'"
             size="20"
-            class="cursor-pointer hover:text-[#1a1a1a] dark:hover:text-gray-500 hover:animate-spin"></Icon>
+            class="cursor-pointer hover:text-[#1a1a1a] dark:hover:text-gray-500 hover:animate-spin"
+          ></Icon>
         </span>
       </div>
     </nav>
   </header>
 </template>
 <script setup lang="ts">
-import { useGlobalStore, globalStore } from '~~/store/global';
-import SearchForm from '../common/SearchForm.vue';
+import { useGlobalStore, globalStore } from "~~/store/global";
+import SearchForm from "../common/SearchForm.vue";
 
 const { isLight } = useGlobalStore();
 const { changeTheme, showSearchModal } = globalStore();
-const currentRoute = ref(0);
+const route = useRoute();
+const currentRoute = ref(String(route.path));
+
+const navigationList = [
+  {
+    name: "Blog",
+    path: "/blog",
+  },
+  {
+    name: "Navigation",
+    path: "/navigation",
+  },
+  {
+    name: "Gallery",
+    path: "/gallery",
+  },
+  {
+    name: "About",
+    path: "/about",
+  },
+];
 
 const searchModal = () => {
   return useModal({
