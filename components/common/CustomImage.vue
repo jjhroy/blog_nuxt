@@ -1,18 +1,30 @@
 <template>
-  <div ref="container" class="flex justify-center items-center">
+  <div ref="container" class="flex justify-center items-center bg-[#f5f7fa]">
     <img
-      v-if="imageSrc || !isLazy"
+      v-if="(imageSrc || !isLazy) && !isError"
       :src="imageSrc || src"
       :alt="alt"
       :class="imageClass"
       :style="imageStyle"
       :loading="loading"
       @load="handleLoad"
+      @error="handleError"
     />
-    <div v-if="isLazy && isLoading && !imageSrc">
+    <div v-if="isLazy && isLoading && !imageSrc && !isError">
       <slot name="placeholder">
         <div class="flex justify-center items-center" :class="imageClass">
           <Icon name="line-md:loading-twotone-loop" class="w-8 h-8" />
+        </div>
+      </slot>
+    </div>
+    <div v-if="isError">
+      <slot name="placeholder">
+        <div
+          class="flex flex-col justify-center items-center text-[#a8abb2]"
+          :class="imageClass"
+        >
+          <Icon name="icon-park-outline:error-picture" class="w-8 h-8" />
+          <p class="mt-3 text-[14px]">抱歉,加载失败了</p>
         </div>
       </slot>
     </div>
@@ -43,6 +55,7 @@ const props = withDefaults(
 
 const imageSrc = ref<string | undefined>();
 const isLoading = ref(true);
+const isError = ref(false);
 const container = ref<HTMLElement>();
 
 let stopScrollListener: (() => void) | undefined;
@@ -59,6 +72,10 @@ const loadImage = () => {
 
 const handleLoad = () => {
   isLoading.value = false;
+};
+
+const handleError = () => {
+  isError.value = true;
 };
 
 const isInContainer = (el?: Element): boolean => {
