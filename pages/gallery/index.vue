@@ -1,6 +1,6 @@
 <template>
-  <div class="w-[1248px] mx-auto">
-    <div class="my-3 flex items-end px-3">
+  <div class="max-w-[1248px] mx-auto">
+    <div class="my-3 flex max-[1248px]:flex-col px-3">
       <section class="flex items-center font-semibold">
         <span class="text-[13px] mr-2 cursor-pointer"> 数据来源: </span>
         <a
@@ -12,8 +12,8 @@
         </a>
       </section>
 
-      <span class="text-[#999] text-[12px] ml-auto">
-        免责声明：本站部分内容来源于网络，图片版权属于原作者，本站转载仅供大家交流学习，切勿用于任何商业用途
+      <span class="text-[#999] text-[12px] min-[1248px]:ml-auto">
+        免责声明：本站部分内容来源于网络，图片版权属于原作者，本站转载仅供大家交流学习，切勿用于任何商业用途。
       </span>
     </div>
 
@@ -50,31 +50,27 @@
       </div>
     </div>
 
-    <ul class="flex flex-wrap mt-[36px]">
-      <li class="m-3" v-for="img in galleryList" :key="img.picture_id">
-        <a
-          class="w-[184px] flex flex-col transition-all ease-in-out hover:scale-105"
+    <ul class="flex flex-wrap max-[1248px]:mt-3 mt-[36px]">
+      <li
+        class="gallery-img max-[1248px]:m-[3vw] m-3 flex-shrink-0"
+        v-for="img in galleryList"
+        :key="img.picture_id"
+      >
+        <common-custom-image
           :href="`https://www.vilipix.com/illust/${img.picture_id}`"
           target="_blank"
+          class="w-full h-full"
+          image-class="w-full h-full rounded-[4px] cursor-pointer transition-all ease-in-out hover:scale-105"
+          :src="img.regular_url"
+          :title="img.title"
+          :alt="img.title"
+          :loading="'lazy'"
+        />
+        <!-- <p
+          class="text-[13px] leading-4 text-center font-semibold antialiased truncate mt-4"
         >
-          <common-custom-image
-            :src="img.regular_url"
-            :alt="img.title"
-            :loading="'lazy'"
-            class="bg-light-200 w-[184px] h-[184px] rounded-[4px]"
-            image-class="w-full h-full rounded-[4px] cursor-pointer"
-          />
-          <!-- <NuxtImg
-            class="w-full h-[184px] object-cover rounded-md flex-shrink-0"
-            quality="80"
-            :src="img.regular_url"
-          /> -->
-          <span
-            class="text-[13px] leading-4 text-center font-semibold antialiased truncate mt-4"
-          >
-            {{ img.title }}
-          </span>
-        </a>
+          {{ img.title }}
+        </p> -->
       </li>
     </ul>
   </div>
@@ -86,7 +82,8 @@ import { useGalleryStore, galleryStore } from "~~/store/gallery";
 const { galleryList, tagList } = useGalleryStore();
 const { getGalleryList, getTagList } = galleryStore();
 try {
-  await Promise.allSettled([getTagList(), getGalleryList()]);
+  const limit = _random(10, 20);
+  await Promise.allSettled([getTagList(), getGalleryList(limit)]);
 } catch (error) {
   console.log("获取数据失败", error);
 }
@@ -102,3 +99,23 @@ const randomBackgroundColor = () =>
     Math.random() * 10
   )}${Math.floor(Math.random() * 10)},80%,50%,1)`;
 </script>
+
+<style scoped lang="scss">
+.gallery-img {
+  width: 184px;
+  height: 184px;
+  border-radius: 4px;
+  @media (max-width: 640px) {
+    width: 44vw;
+    height: 44vw;
+  }
+  @media (max-width: 1024px) {
+    width: 27.3333333333333333333vw;
+    height: 27.3333333333333333333vw;
+  }
+  @media (max-width: 1248px) {
+    width: 19vw;
+    height: 19vw;
+  }
+}
+</style>

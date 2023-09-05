@@ -5,6 +5,7 @@
     </div>
   </div>
 </template>
+
 <style scoped lang="scss">
 .fadeInDown {
   animation: fadeInDown 0.7s;

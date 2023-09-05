@@ -1,13 +1,16 @@
 // 爬取vilipix的数据
 import { IVilipixImgList, IVilipixTagList } from "~~/interface/gallery/index";
-const limit = ref(_random(10, 20));
+
 export const galleryApi = {
-  // 获取图片列表
-  getGalleryList: async () =>
+  // 获取榜单图片列表
+  getRankingGalleryList: async () => {},
+
+  // 获取推荐图片列表
+  getGalleryList: async (limit: number) =>
     await useAsyncData<IVilipixImgList>("gallery-list", () =>
       $fetch(`https://www.vilipix.com/api/v1/picture/recommand`, {
         query: {
-          limit: limit.value,
+          limit: limit,
           offset: 1,
         },
       })

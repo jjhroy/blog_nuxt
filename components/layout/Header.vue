@@ -1,13 +1,11 @@
 <template>
   <header
-    class="flex items-center justify-between mobile:p-6 p-4 text-[#999] dark:bg-[#1a1a1a]"
-  >
+    class="flex items-center justify-between mobile:p-6 p-4 text-[#999] dark:bg-[#1a1a1a]">
     <NuxtLink
       to="/"
       class="left-4 font-semibold hover:text-[#1a1a1a] dark:hover:text-[#42b883] mobile:text-[16px] text-[14px]"
       :class="{ 'text-[#1a1a1a] dark:text-[#42b883]': currentRoute === '/' }"
-      @click="currentRoute = '/'"
-    >
+      @click="currentRoute = '/'">
       Bochi
     </NuxtLink>
     <nav class="flex mobile:text-[16px] text-[14px]">
@@ -36,23 +34,20 @@
           :class="{
             'text-[#1a1a1a] dark:text-[#42b883]': currentRoute === path,
           }"
-          @click="currentRoute = path"
-        >
+          @click="currentRoute = path">
           {{ name }}
         </NuxtLink>
         <a target="_blank" href="https://github.com/jjhroy">
           <Icon
             name="mingcute:github-line"
             size="24"
-            class="hover:text-[#1a1a1a] dark:hover:text-gray-500"
-          ></Icon>
+            class="hover:text-[#1a1a1a] dark:hover:text-gray-500"></Icon>
         </a>
         <span @click="changeTheme">
           <Icon
             :name="isLight ? 'ph:sun-bold' : 'ph:moon-bold'"
             size="20"
-            class="cursor-pointer hover:text-[#1a1a1a] dark:hover:text-gray-500 hover:animate-spin"
-          ></Icon>
+            class="cursor-pointer hover:text-[#1a1a1a] dark:hover:text-gray-500 hover:animate-spin"></Icon>
         </span>
       </div>
     </nav>

@@ -7,8 +7,8 @@ export const galleryStore = defineStore(GALLERY_STORE, () => {
   const galleryList = ref<IVilipixImgItem[]>([]);
   const tagList = ref<IVilipixTag[]>([]);
 
-  const getGalleryList = async () => {
-    const { data } = await galleryApi.getGalleryList();
+  const getGalleryList = async (limit: number) => {
+    const { data } = await galleryApi.getGalleryList(limit);
     galleryList.value = data.value?.data.rows ?? [];
   };
 

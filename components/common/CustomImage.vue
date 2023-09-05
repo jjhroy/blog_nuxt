@@ -1,6 +1,10 @@
 <template>
-  <div ref="container" class="flex justify-center items-center bg-[#f5f7fa]">
-    <img
+  <component
+    :is="href ? 'a' : 'div'"
+    ref="container"
+    class="flex flex-col justify-center items-center"
+  >
+    <NuxtImg
       v-if="(imageSrc || !isLazy) && !isError"
       :src="imageSrc || src"
       :alt="alt"
@@ -10,25 +14,22 @@
       @load="handleLoad"
       @error="handleError"
     />
-    <div v-if="isLazy && isLoading && !imageSrc && !isError">
-      <slot name="placeholder">
-        <div class="flex justify-center items-center" :class="imageClass">
-          <Icon name="line-md:loading-twotone-loop" class="w-8 h-8" />
-        </div>
-      </slot>
+    <div
+      v-if="isLazy && isLoading && !imageSrc && !isError"
+      class="flex justify-center items-center"
+      :class="imageClass"
+    >
+      <Icon name="line-md:loading-twotone-loop" class="w-8 h-8" />
     </div>
-    <div v-if="isError">
-      <slot name="placeholder">
-        <div
-          class="flex flex-col justify-center items-center text-[#a8abb2]"
-          :class="imageClass"
-        >
-          <Icon name="icon-park-outline:error-picture" class="w-8 h-8" />
-          <p class="mt-3 text-[14px]">抱歉,加载失败了</p>
-        </div>
-      </slot>
+    <div
+      v-if="isError"
+      class="flex flex-col justify-center items-center text-[#a8abb2]"
+      :class="imageClass"
+    >
+      <Icon name="icon-park-outline:error-picture" class="w-8 h-8" />
+      <p class="mt-3 text-[14px]">抱歉,加载失败了</p>
     </div>
-  </div>
+  </component>
 </template>
 
 <script setup lang="ts">
@@ -38,6 +39,9 @@ const props = withDefaults(
   defineProps<{
     src: string;
     alt?: string;
+    title?: string;
+    href?: string;
+    target?: string;
     loading?: "lazy" | "eager";
     imgContainer?: boolean;
     imageClass?: string;
@@ -137,5 +141,3 @@ onMounted(() => {
   }
 });
 </script>
-
-<style scoped></style>

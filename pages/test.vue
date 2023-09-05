@@ -1,101 +1,52 @@
 <template>
-  <div class="w-full h-full flex">
-    <ul>
-      <li
-        v-for="i in 50"
-        :key="i"></li>
-    </ul>
+  <div class="mx-auto text-center">
+    <div class="text-center text-gray-600">
+      <label
+        for="file-upload"
+        class="relative cursor-pointer bg-white rounded-md text-gray-400 hover:text-indigo-500">
+        <svg
+          class="mx-auto h-8 w-8"
+          stroke="currentColor"
+          fill="none"
+          viewBox="0 0 48 48"
+          aria-hidden="true">
+          <path
+            d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <input
+          id="file-upload"
+          name="cover"
+          type="file"
+          class="sr-only"
+          accept="image/png,image/jpeg,image/jpg"
+          @change="uploadImage($event.target.files)" />
+      </label>
+    </div>
+    <p class="text-xs text-gray-500">png, jpeg, jpg</p>
+    <p class="text-xs text-gray-500">up to 2MB</p>
   </div>
 </template>
-
 <script setup lang="ts">
-const { data: tagList, refresh } = await useAsyncData('juejin-tag-list', () =>
-  $fetch(`https://api.juejin.cn/tag_api/v1/query_tag_list`, {
-    method: 'POST',
-    params: {
-      cursor: '10',
-      key_word: '',
-      limit: 10,
-      sort_type: 1,
-    },
-  }),
-);
-console.log('tagList', tagList.value.data);
-tagList.value.data.forEach((item) => {
-  console.log(item.tag.tag_name);
-});
+// 上传文件
+const uploadImage = (files: Array<File>) => {
+  console.log("files", files);
+
+  if (files.length > 0) {
+    uploadFile(files[0]).subscribe({
+      next: (result) => {},
+      error: () => {},
+      complete: (e) => {
+        // let data = {
+        //   ...this.postsData,
+        //   cover: "https://cdn.leafage.top/" + e.key,
+        // };
+        // this.postsData = data;
+        console.log("完成上传", e);
+      },
+    });
+  }
+};
 </script>
-
-<style scoped lang="scss">
-$count: 50;
-@function randomNum($max, $min: 0, $u: 1) {
-  @return ($min + random($max)) * $u;
-}
-@function randomColor() {
-  @return rgb(randomNum(255), randomNum(255), randomNum(255));
-}
-// body,
-// html {
-//     width: 100%;
-//     height: 100%;
-//     display: flex;
-//     // background: #383838;
-// }
-ul {
-  position: relative;
-  margin: auto;
-  display: flex;
-  gap: 4px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 660px;
-  height: 420px;
-  cursor: pointer;
-}
-li {
-  flex-shrink: 0;
-  height: 30px;
-  border-radius: 30px;
-}
-
-@for $i from 1 to $count {
-  li:nth-child(#{$i}) {
-    width: #{randomNum(110, 90)}px;
-    background: randomColor();
-  }
-}
-
-ul:hover {
-  li {
-    opacity: 0;
-  }
-  @for $i from 1 to $count {
-    li:nth-child(#{$i}) {
-      animation: falldown
-        0.3s
-        cubic-bezier(0.43, 0.02, 0.64, 1.5)
-        #{50 *
-        ($count - $i) +
-        (random(150) - random(300))}ms
-        forwards;
-    }
-  }
-}
-@keyframes falldown {
-  0% {
-    transform: translateY(-180px) scaleX(0.1) scaleY(0.3);
-    opacity: 1;
-  }
-  20% {
-    transform: translateY(-200px) scaleX(0.6) scaleY(0.3);
-  }
-  75% {
-    transform: translateY(0) scaleX(0.6) scaleY(0.3);
-  }
-  100% {
-    transform: translateY(0) scaleX(1) scaleY(1);
-    opacity: 1;
-  }
-}
-</style>
